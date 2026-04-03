@@ -1,0 +1,14 @@
+{
+  "docs": {
+    "title": "Documentation",
+    "subtitle": "Everything you need to know about Toolio",
+    "squares": [
+      { "heading": "Getting Started", "text": "Quick start guide to set up your first project in under 5 minutes.", "icon": "rocket" },
+      { "heading": "API Reference", "text": "Complete REST and GraphQL API documentation with examples.", "icon": "code" },
+      { "heading": "SDKs", "text": "Official SDKs for JavaScript, Python, Go, and Ruby.", "icon": "package" },
+      { "heading": "Webhooks", "text": "Real-time event notifications for all resource changes.", "icon": "bell" },
+      { "heading": "CLI Tool", "text": "Command-line interface for power users and CI/CD pipelines.", "icon": "terminal" },
+      { "heading": "Changelog", "text": "Stay up to date with the latest features and improvements.", "icon": "clipboard-list" }
+    ]
+  }
+}

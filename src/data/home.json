@@ -1,0 +1,74 @@
+{
+  "hero": {
+    "title": "Toolio",
+    "subtitle": "The all-in-one toolkit for modern teams",
+    "squares": [
+      { "heading": "Ship Faster", "text": "Accelerate your workflow with intelligent automation that learns your patterns.", "icon": "rocket" },
+      { "heading": "Stay Aligned", "text": "Real-time collaboration keeps everyone on the same page, no matter where they are.", "icon": "users" },
+      { "heading": "Scale Smart", "text": "From startup to enterprise, Toolio grows with your team seamlessly.", "icon": "trending-up" },
+      { "heading": "Zero Friction", "text": "Onboard in minutes. No complex setup, no steep learning curve.", "icon": "zap" },
+      { "heading": "Deep Insights", "text": "Analytics dashboards that surface what matters, not just raw data.", "icon": "chart-bar" },
+      { "heading": "Built to Last", "text": "Enterprise-grade security and reliability from day one.", "icon": "shield" }
+    ]
+  },
+  "features": {
+    "title": "Features",
+    "subtitle": "Everything you need, nothing you don't",
+    "squares": [
+      { "heading": "Task Boards", "text": "Drag-and-drop boards with customizable workflows for every team.", "icon": "layout-dashboard" },
+      { "heading": "Time Tracking", "text": "Automatic time tracking that runs silently in the background.", "icon": "clock" },
+      { "heading": "Integrations", "text": "Connect with 200+ tools your team already uses daily.", "icon": "plug" },
+      { "heading": "Templates", "text": "Pre-built templates for sprints, roadmaps, and retrospectives.", "icon": "file-text" },
+      { "heading": "Automations", "text": "Set rules once and let Toolio handle the repetitive tasks.", "icon": "bot" },
+      { "heading": "API Access", "text": "Full REST and GraphQL APIs for custom integrations.", "icon": "code" }
+    ]
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "Three steps to a better workflow",
+    "squares": [
+      { "heading": "1. Connect", "text": "Link your existing tools and import your data in one click.", "icon": "link" },
+      { "heading": "2. Configure", "text": "Set up workflows that match how your team actually works.", "icon": "settings" },
+      { "heading": "3. Collaborate", "text": "Start working together with real-time sync across all devices.", "icon": "message-circle" },
+      { "heading": "4. Automate", "text": "Let Toolio learn your patterns and suggest optimizations.", "icon": "repeat" },
+      { "heading": "5. Measure", "text": "Track progress with automatically generated reports.", "icon": "chart-line" },
+      { "heading": "6. Iterate", "text": "Continuously improve with data-driven retrospectives.", "icon": "refresh-cw" }
+    ]
+  },
+  "pricing": {
+    "title": "Pricing",
+    "subtitle": "Plans that grow with you",
+    "squares": [
+      { "heading": "Starter", "text": "Free for up to 5 users. Includes basic boards and time tracking.", "icon": "sparkles" },
+      { "heading": "Team", "text": "$12/user/mo. Unlimited boards, integrations, and automations.", "icon": "users" },
+      { "heading": "Business", "text": "$29/user/mo. Advanced analytics, SSO, and priority support.", "icon": "building" },
+      { "heading": "Enterprise", "text": "Custom pricing. Dedicated infrastructure and SLA guarantees.", "icon": "crown" },
+      { "heading": "Add-ons", "text": "Extra storage, advanced reporting, and custom branding available.", "icon": "package" },
+      { "heading": "Non-Profit", "text": "50% discount for qualified non-profit organizations.", "icon": "heart" }
+    ]
+  },
+  "testimonials": {
+    "title": "Testimonials",
+    "subtitle": "Trusted by teams everywhere",
+    "squares": [
+      { "heading": "Sarah K., CTO", "text": "\"Toolio cut our sprint planning time in half. Game changer.\"", "icon": "quote" },
+      { "heading": "Marcus R., PM", "text": "\"Finally a tool that doesn't fight the way we work.\"", "icon": "quote" },
+      { "heading": "Lena W., Designer", "text": "\"The integrations just work. No more copy-pasting between apps.\"", "icon": "quote" },
+      { "heading": "James P., Engineer", "text": "\"The API is rock solid. Built our internal dashboard on top of it.\"", "icon": "quote" },
+      { "heading": "Aisha M., Founder", "text": "\"Switched from three separate tools to just Toolio. Never looked back.\"", "icon": "quote" },
+      { "heading": "Tom L., Ops Lead", "text": "\"Automations save our team about 10 hours per week.\"", "icon": "quote" }
+    ]
+  },
+  "cta": {
+    "title": "Get Started",
+    "subtitle": "Join 10,000+ teams already using Toolio",
+    "squares": [
+      { "heading": "Free Trial", "text": "14 days free, no credit card required. Start building today.", "icon": "play" },
+      { "heading": "Live Demo", "text": "Book a 30-minute walkthrough with our product team.", "icon": "video" },
+      { "heading": "Documentation", "text": "Comprehensive guides and API references to get you started.", "icon": "book-open" },
+      { "heading": "Community", "text": "Join our Discord with 5,000+ members sharing tips and templates.", "icon": "message-square" },
+      { "heading": "Blog", "text": "Weekly articles on productivity, teamwork, and product updates.", "icon": "pen-tool" },
+      { "heading": "Contact Us", "text": "Questions? Our team responds within 2 hours during business hours.", "icon": "mail" }
+    ]
+  }
+}

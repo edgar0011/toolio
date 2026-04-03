@@ -1,0 +1,14 @@
+{
+  "about": {
+    "title": "About Toolio",
+    "subtitle": "Built by makers, for makers",
+    "squares": [
+      { "heading": "Our Mission", "text": "To eliminate busywork so teams can focus on what actually matters.", "icon": "target" },
+      { "heading": "Founded 2024", "text": "Started in a garage in Austin, TX by three ex-engineers from big tech.", "icon": "calendar" },
+      { "heading": "The Team", "text": "32 people across 12 countries, all working remotely using Toolio itself.", "icon": "globe" },
+      { "heading": "Open Source", "text": "Our core engine is open source. We believe in building in public.", "icon": "git-fork" },
+      { "heading": "Backed By", "text": "Seed funded by Sequoia and Y Combinator. Series A coming soon.", "icon": "banknote" },
+      { "heading": "Contact", "text": "hello@toolio.dev — we read every email and reply within 24 hours.", "icon": "mail" }
+    ]
+  }
+}

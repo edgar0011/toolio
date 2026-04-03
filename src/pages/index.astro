@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import homeData from "../data/home.json";
+
+const sections = [
+  homeData.hero,
+  homeData.features,
+  homeData.howItWorks,
+  homeData.pricing,
+  homeData.testimonials,
+  homeData.cta,
+];
+---
+
+<Layout title="Toolio — The all-in-one toolkit for modern teams" currentPath="/">
+  {
+    sections.map((section, sectionIndex) => (
+      <>
+        <content-section
+          section-title={section.title}
+          section-subtitle={section.subtitle}
+          section-index={String(sectionIndex)}
+        >
+          {section.squares.map((sq, i) => (
+            <content-square heading={sq.heading} text={sq.text} icon={sq.icon} data-index={String(i)} />
+          ))}
+        </content-section>
+        {sectionIndex === 0 && <photo-banner />}
+        {sectionIndex === 4 && <hero-image />}
+      </>
+    ))
+  }
+</Layout>

@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const aboutData = await import("../data/about.json");
+const section = aboutData.about;
+---
+
+<Layout title="About — Toolio" currentPath="/about">
+  <content-section
+    section-title={section.title}
+    section-subtitle={section.subtitle}
+    section-index="1"
+    data-hyperspeed
+  >
+    {
+      section.squares.map((sq, i) => (
+        <content-square heading={sq.heading} text={sq.text} icon={sq.icon} data-index={String(i)} />
+      ))
+    }
+  </content-section>
+  <script src="../components/compounds/hyperspeed.ts"></script>
+</Layout>

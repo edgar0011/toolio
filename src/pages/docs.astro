@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const docsData = await import("../data/docs.json");
+const section = docsData.docs;
+---
+
+<Layout title="Docs — Toolio" currentPath="/docs">
+  <content-section
+    section-title={section.title}
+    section-subtitle={section.subtitle}
+    section-index="0"
+  >
+    {
+      section.squares.map((sq, i) => (
+        <content-square heading={sq.heading} text={sq.text} icon={sq.icon} data-index={String(i)} />
+      ))
+    }
+  </content-section>
+</Layout>

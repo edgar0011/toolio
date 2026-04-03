@@ -1,0 +1,40 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  currentPath: string;
+}
+
+const { title, currentPath } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Toolio — The all-in-one toolkit for modern teams" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" /></noscript>
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen flex flex-col bg-toolio-white text-toolio-dark font-sans antialiased">
+    <site-nav current={currentPath}></site-nav>
+    <main class="flex-1">
+      <slot />
+    </main>
+    <site-footer></site-footer>
+
+    <script src="../components/molecules/nav.ts"></script>
+    <script src="../components/molecules/footer.ts"></script>
+    <script src="../components/molecules/section.ts"></script>
+    <script src="../components/molecules/square.ts"></script>
+    <script src="../components/compounds/hero-image.ts"></script>
+    <script src="../components/compounds/photo-banner.ts"></script>
+  </body>
+</html>
