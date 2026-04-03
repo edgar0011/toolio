@@ -3,12 +3,12 @@
     "title": "Toolio",
     "subtitle": "The all-in-one toolkit for modern teams",
     "squares": [
-      { "heading": "Ship Faster", "text": "Accelerate your workflow with intelligent automation that learns your patterns.", "icon": "rocket" },
-      { "heading": "Stay Aligned", "text": "Real-time collaboration keeps everyone on the same page, no matter where they are.", "icon": "users" },
-      { "heading": "Scale Smart", "text": "From startup to enterprise, Toolio grows with your team seamlessly.", "icon": "trending-up" },
-      { "heading": "Zero Friction", "text": "Onboard in minutes. No complex setup, no steep learning curve.", "icon": "zap" },
-      { "heading": "Deep Insights", "text": "Analytics dashboards that surface what matters, not just raw data.", "icon": "chart-bar" },
-      { "heading": "Built to Last", "text": "Enterprise-grade security and reliability from day one.", "icon": "shield" }
+      { "heading": "Ship Faster", "text": "Accelerate your workflow with intelligent automation that learns your patterns.", "icon": "rocket", "color": "violet" },
+      { "heading": "Stay Aligned", "text": "Real-time collaboration keeps everyone on the same page, no matter where they are.", "icon": "users", "color": "teal" },
+      { "heading": "Scale Smart", "text": "From startup to enterprise, Toolio grows with your team seamlessly.", "icon": "trending-up", "color": "blue" },
+      { "heading": "Zero Friction", "text": "Onboard in minutes. No complex setup, no steep learning curve.", "icon": "zap", "color": "amber" },
+      { "heading": "Deep Insights", "text": "Analytics dashboards that surface what matters, not just raw data.", "icon": "chart-bar", "color": "rose" },
+      { "heading": "Built to Last", "text": "Enterprise-grade security and reliability from day one.", "icon": "shield", "color": "gray" }
     ]
   },
   "features": {
@@ -27,12 +27,12 @@
     "title": "How It Works",
     "subtitle": "Three steps to a better workflow",
     "squares": [
-      { "heading": "1. Connect", "text": "Link your existing tools and import your data in one click.", "icon": "link" },
-      { "heading": "2. Configure", "text": "Set up workflows that match how your team actually works.", "icon": "settings" },
-      { "heading": "3. Collaborate", "text": "Start working together with real-time sync across all devices.", "icon": "message-circle" },
-      { "heading": "4. Automate", "text": "Let Toolio learn your patterns and suggest optimizations.", "icon": "repeat" },
-      { "heading": "5. Measure", "text": "Track progress with automatically generated reports.", "icon": "chart-line" },
-      { "heading": "6. Iterate", "text": "Continuously improve with data-driven retrospectives.", "icon": "refresh-cw" }
+      { "heading": "1. Connect", "text": "Link your existing tools and import your data in one click.", "icon": "link", "color": "blue" },
+      { "heading": "2. Configure", "text": "Set up workflows that match how your team actually works.", "icon": "settings", "color": "violet" },
+      { "heading": "3. Collaborate", "text": "Start working together with real-time sync across all devices.", "icon": "message-circle", "color": "teal" },
+      { "heading": "4. Automate", "text": "Let Toolio learn your patterns and suggest optimizations.", "icon": "repeat", "color": "amber" },
+      { "heading": "5. Measure", "text": "Track progress with automatically generated reports.", "icon": "chart-line", "color": "rose" },
+      { "heading": "6. Iterate", "text": "Continuously improve with data-driven retrospectives.", "icon": "refresh-cw", "color": "gray" }
     ]
   },
   "pricing": {

@@ -22,7 +22,7 @@ const sections = [
           section-index={String(sectionIndex)}
         >
           {section.squares.map((sq, i) => (
-            <content-square heading={sq.heading} text={sq.text} icon={sq.icon} data-index={String(i)} />
+            <content-square heading={sq.heading} text={sq.text} icon={sq.icon} color={sq.color ?? ""} data-index={String(i)} />
           ))}
         </content-section>
         {sectionIndex === 0 && <photo-banner />}

@@ -81,27 +81,42 @@ const ICONS: Record<string, IconNode> = {
   "clipboard-list": ClipboardList,
 };
 
+const COLOR_MAP: Record<string, { icon: string; bg: string; title: string }> = {
+  violet: { icon: "#7c3aed", bg: "#ede9fe", title: "#7c3aed" },
+  teal: { icon: "#0d9488", bg: "#e0f5f1", title: "#0d9488" },
+  blue: { icon: "#2563eb", bg: "#e0ecfc", title: "#2563eb" },
+  amber: { icon: "#d97706", bg: "#fef3c7", title: "#d97706" },
+  rose: { icon: "#e11d48", bg: "#fce4ec", title: "#e11d48" },
+  gray: { icon: "#6b7280", bg: "#f3f4f6", title: "#6b7280" },
+};
+
 class ContentSquare extends HTMLElement {
   connectedCallback() {
     const heading = this.getAttribute("heading") ?? "";
     const text = this.getAttribute("text") ?? "";
     const iconName = this.getAttribute("icon") ?? "";
+    const colorName = this.getAttribute("color") ?? "";
     const sectionIndex = parseInt(
       this.closest("content-section")?.getAttribute("section-index") ?? "0",
     );
 
     const isDarkSection = sectionIndex % 2 === 1;
-    const iconColorClass = isDarkSection ? "text-[#6db0e0]" : "text-toolio-dark";
+    const colorScheme = COLOR_MAP[colorName];
+    const iconColor = colorScheme ? colorScheme.icon : isDarkSection ? "#6db0e0" : "#003366";
+    const iconBg = colorScheme ? colorScheme.bg : isDarkSection ? "rgba(109,176,224,0.15)" : "rgba(0,51,102,0.08)";
+    const headingStyle = colorScheme
+      ? `color: ${colorScheme.title}`
+      : "";
     const cardClasses = isDarkSection
       ? "bg-white/[0.08] border border-white/[0.12] shadow-[0_1px_3px_rgba(0,0,0,0.2)]"
       : "bg-white shadow-[0_1px_3px_rgba(0,51,102,0.08),0_1px_2px_rgba(0,51,102,0.06)]";
-    const headingColor = isDarkSection ? "text-white" : "text-toolio-dark";
+    const headingColor = colorScheme ? "" : isDarkSection ? "text-white" : "text-toolio-dark";
     const textColor = isDarkSection ? "text-toolio-200" : "text-toolio-500";
 
     this.innerHTML = `
       <div class="rounded-2xl flex flex-col justify-start p-[clamp(1.25rem,2.5dvw,2.5rem)] min-h-[clamp(160px,22dvh,260px)] opacity-0 -translate-y-5 transition-all duration-500 ease-out ${cardClasses}" data-card>
-        ${iconName ? `<div class="mb-4 ${iconColorClass}" data-icon-slot></div>` : ""}
-        <h3 class="font-semibold ${headingColor} text-[clamp(1rem,1.8dvw,1.25rem)] mb-3">${heading}</h3>
+        ${iconName ? `<div class="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl" style="background:${iconBg};color:${iconColor}" data-icon-slot></div>` : ""}
+        <h3 class="font-semibold ${headingColor} text-[clamp(1rem,1.8dvw,1.25rem)] mb-3" ${headingStyle ? `style="${headingStyle}"` : ""}>${heading}</h3>
         <p class="${textColor} leading-relaxed text-[clamp(0.8rem,1.3dvw,0.95rem)]">${text}</p>
       </div>
     `;
