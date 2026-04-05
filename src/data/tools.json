@@ -1,0 +1,848 @@
+{
+  "tools": {
+    "title": "Tools",
+    "subtitle": "Programming languages, libraries, helpers, components, utils, LLM skills & plugins",
+    "items": [
+      {
+        "heading": "AG Grid",
+        "text": "Advanced data grid for enterprise dashboards with virtual scrolling, row grouping, pivoting, and server-side data models handling millions of rows.",
+        "icon": "grid",
+        "color": "amber",
+        "category": "component"
+      },
+      {
+        "heading": "Angular",
+        "text": "Full-featured web application framework by Google.",
+        "icon": "shield",
+        "color": "violet",
+        "category": "framework"
+      },
+      {
+        "heading": "Ant Design",
+        "text": "Enterprise UI design system.",
+        "icon": "building",
+        "color": "amber",
+        "category": "component"
+      },
+      {
+        "heading": "API Design",
+        "text": "Design RESTful endpoints with consistent naming, proper status codes, and pagination.",
+        "icon": "target",
+        "color": "gray",
+        "category": "skill"
+      },
+      {
+        "heading": "Astro",
+        "text": "Content-focused static site builder. Ships zero JavaScript by default and supports any UI framework through islands architecture.",
+        "icon": "rocket",
+        "color": "violet",
+        "category": "framework"
+      },
+      {
+        "heading": "Auth0",
+        "text": "Authentication and authorization platform.",
+        "icon": "lock",
+        "color": "rose",
+        "category": "infra"
+      },
+      {
+        "heading": "AWS Lambda",
+        "text": "Serverless compute.",
+        "icon": "server",
+        "color": "rose",
+        "category": "infra"
+      },
+      {
+        "heading": "Axios",
+        "text": "Promise-based HTTP client.",
+        "icon": "globe",
+        "color": "teal",
+        "category": "library"
+      },
+      {
+        "heading": "Babel",
+        "text": "JavaScript compiler.",
+        "icon": "settings",
+        "color": "blue",
+        "category": "devtool"
+      },
+      {
+        "heading": "Biome",
+        "text": "Unified formatter and linter \u2014 replaces Prettier and ESLint with one fast tool.",
+        "icon": "wrench",
+        "color": "blue",
+        "category": "devtool"
+      },
+      {
+        "heading": "Bug Detection",
+        "text": "Find potential issues, race conditions, and edge cases through static analysis and pattern matching across your entire codebase.",
+        "icon": "eye",
+        "color": "gray",
+        "category": "skill"
+      },
+      {
+        "heading": "Chakra UI",
+        "text": "Simple, modular, accessible React component library.",
+        "icon": "sparkles",
+        "color": "amber",
+        "category": "component"
+      },
+      {
+        "heading": "Changesets",
+        "text": "Version management and changelog generation for monorepos.",
+        "icon": "file-text",
+        "color": "blue",
+        "category": "devtool"
+      },
+      {
+        "heading": "Clerk",
+        "text": "User management with pre-built UI components for sign-in, sign-up, and user profiles.",
+        "icon": "users",
+        "color": "rose",
+        "category": "infra"
+      },
+      {
+        "heading": "Cloudflare Workers",
+        "text": "Edge computing platform that runs your code in 300+ cities worldwide with sub-millisecond cold starts.",
+        "icon": "globe",
+        "color": "rose",
+        "category": "infra"
+      },
+      {
+        "heading": "cmdk",
+        "text": "Command palette component. Fast, composable, and unstyled \u2014 add a Spotlight-like search to any React app.",
+        "icon": "command",
+        "color": "amber",
+        "category": "component"
+      },
+      {
+        "heading": "Code Review",
+        "text": "Automated PR analysis that catches bugs, security issues, and style violations before human review.",
+        "icon": "search",
+        "color": "gray",
+        "category": "skill"
+      },
+      {
+        "heading": "Commit Message",
+        "text": "Smart commit message generation.",
+        "icon": "message-square",
+        "color": "gray",
+        "category": "skill"
+      },
+      {
+        "heading": "D3.js",
+        "text": "Data visualization library for the browser.",
+        "icon": "chart-line",
+        "color": "teal",
+        "category": "library"
+      },
+      {
+        "heading": "DaisyUI",
+        "text": "Tailwind CSS component library that adds semantic class names \u2014 write button instead of px-4 py-2 bg-blue-500 text-white rounded.",
+        "icon": "star",
+        "color": "amber",
+        "category": "component"
+      },
+      {
+        "heading": "Database Explorer",
+        "text": "Schema visualization and query builder \u2014 browse tables, inspect relationships, and generate optimized queries from natural language.",
+        "icon": "database",
+        "color": "gray",
+        "category": "plugin"
+      },
+      {
+        "heading": "date-fns",
+        "text": "Modern date utility library with a functional API and tree-shakeable modules \u2014 take only what you need without bloating your bundle.",
+        "icon": "calendar",
+        "color": "teal",
+        "category": "library"
+      },
+      {
+        "heading": "Deno",
+        "text": "Secure TypeScript runtime with built-in tooling \u2014 formatter, linter, test runner, and package manager all in a single binary.",
+        "icon": "lock",
+        "color": "violet",
+        "category": "runtime"
+      },
+      {
+        "heading": "Django",
+        "text": "Python web framework with batteries included \u2014 ORM, admin panel, auth, and templating ready out of the box for rapid development.",
+        "icon": "building",
+        "color": "violet",
+        "category": "framework"
+      },
+      {
+        "heading": "Docker",
+        "text": "Container platform for building, shipping, and running applications in isolated environments that work consistently across development, staging, and production.",
+        "icon": "box",
+        "color": "blue",
+        "category": "devtool"
+      },
+      {
+        "heading": "Documentation",
+        "text": "Generate docs, READMEs, and API references from code.",
+        "icon": "file-text",
+        "color": "gray",
+        "category": "skill"
+      },
+      {
+        "heading": "Drizzle ORM",
+        "text": "Lightweight TypeScript ORM.",
+        "icon": "code",
+        "color": "rose",
+        "category": "infra"
+      },
+      {
+        "heading": "esbuild",
+        "text": "Extremely fast JavaScript bundler written in Go.",
+        "icon": "rocket",
+        "color": "blue",
+        "category": "devtool"
+      },
+      {
+        "heading": "ESLint",
+        "text": "JavaScript and TypeScript linter that catches bugs and enforces style.",
+        "icon": "search",
+        "color": "blue",
+        "category": "devtool"
+      },
+      {
+        "heading": "Express.js",
+        "text": "Minimal Node.js web framework.",
+        "icon": "terminal",
+        "color": "violet",
+        "category": "framework"
+      },
+      {
+        "heading": "FastAPI",
+        "text": "Modern Python API framework with automatic OpenAPI docs.",
+        "icon": "rocket",
+        "color": "violet",
+        "category": "framework"
+      },
+      {
+        "heading": "Figma Bridge",
+        "text": "Design-to-code pipeline.",
+        "icon": "pen-tool",
+        "color": "gray",
+        "category": "plugin"
+      },
+      {
+        "heading": "Firebase",
+        "text": "Google's app development platform with real-time database, auth, hosting, and serverless functions all managed through a single console.",
+        "icon": "cloud",
+        "color": "rose",
+        "category": "infra"
+      },
+      {
+        "heading": "Formik",
+        "text": "Form management for React.",
+        "icon": "file-text",
+        "color": "amber",
+        "category": "component"
+      },
+      {
+        "heading": "Framer Motion",
+        "text": "Production-ready animations for React.",
+        "icon": "play",
+        "color": "teal",
+        "category": "library"
+      },
+      {
+        "heading": "Git",
+        "text": "Distributed version control system.",
+        "icon": "git-fork",
+        "color": "blue",
+        "category": "devtool"
+      },
+      {
+        "heading": "GitHub Actions",
+        "text": "CI/CD automation directly in your repository. Define workflows with YAML to build, test, and deploy on every push or pull request.",
+        "icon": "play",
+        "color": "blue",
+        "category": "devtool"
+      },
+      {
+        "heading": "GitHub Integration",
+        "text": "Full PR and issue management \u2014 create branches, review code, merge PRs, and triage issues directly from your conversation.",
+        "icon": "git-fork",
+        "color": "gray",
+        "category": "plugin"
+      },
+      {
+        "heading": "Go",
+        "text": "Fast compiled language built for concurrency and servers.",
+        "icon": "zap",
+        "color": "violet",
+        "category": "language"
+      },
+      {
+        "heading": "GraphQL",
+        "text": "Query language for APIs that lets clients request exactly the data they need.",
+        "icon": "link",
+        "color": "rose",
+        "category": "infra"
+      },
+      {
+        "heading": "Headless UI",
+        "text": "Unstyled accessible UI components designed for Tailwind CSS.",
+        "icon": "eye",
+        "color": "amber",
+        "category": "component"
+      },
+      {
+        "heading": "Heroicons",
+        "text": "Hand-crafted SVG icons by the Tailwind team.",
+        "icon": "heart",
+        "color": "amber",
+        "category": "component"
+      },
+      {
+        "heading": "Husky",
+        "text": "Git hooks made easy. Run linters, tests, and formatters automatically before every commit to catch issues early.",
+        "icon": "shield",
+        "color": "blue",
+        "category": "devtool"
+      },
+      {
+        "heading": "Jest",
+        "text": "JavaScript testing framework with built-in mocking, assertions, and code coverage.",
+        "icon": "check-circle",
+        "color": "teal",
+        "category": "library"
+      },
+      {
+        "heading": "Jira Connector",
+        "text": "Sync issues, update tickets, and track sprint progress.",
+        "icon": "clipboard-list",
+        "color": "gray",
+        "category": "plugin"
+      },
+      {
+        "heading": "JWT",
+        "text": "JSON Web Tokens for stateless authentication.",
+        "icon": "lock",
+        "color": "rose",
+        "category": "infra"
+      },
+      {
+        "heading": "Linear Sync",
+        "text": "Issue tracker integration for modern teams \u2014 sync project states, auto-close resolved issues, and create sub-issues from code TODOs.",
+        "icon": "target",
+        "color": "gray",
+        "category": "plugin"
+      },
+      {
+        "heading": "lint-staged",
+        "text": "Run linters only on staged files.",
+        "icon": "filter",
+        "color": "blue",
+        "category": "devtool"
+      },
+      {
+        "heading": "Lodash",
+        "text": "JavaScript utility functions for arrays, objects, strings, and more.",
+        "icon": "wrench",
+        "color": "teal",
+        "category": "library"
+      },
+      {
+        "heading": "Log Analyzer",
+        "text": "Parse and summarize application logs.",
+        "icon": "activity",
+        "color": "gray",
+        "category": "plugin"
+      },
+      {
+        "heading": "Lucide Icons",
+        "text": "Beautiful open-source icon library with 1500+ consistent icons.",
+        "icon": "star",
+        "color": "amber",
+        "category": "component"
+      },
+      {
+        "heading": "Mantine",
+        "text": "Full-featured React components and hooks.",
+        "icon": "package",
+        "color": "amber",
+        "category": "component"
+      },
+      {
+        "heading": "Material UI",
+        "text": "React component library implementing Google's Material Design system with a comprehensive set of pre-built components for enterprise applications.",
+        "icon": "grid",
+        "color": "amber",
+        "category": "component"
+      },
+      {
+        "heading": "MongoDB",
+        "text": "Document database for flexible schemas.",
+        "icon": "database",
+        "color": "rose",
+        "category": "infra"
+      },
+      {
+        "heading": "Neon",
+        "text": "Serverless Postgres with branching \u2014 create database branches like git branches for previews and testing.",
+        "icon": "git-fork",
+        "color": "rose",
+        "category": "infra"
+      },
+      {
+        "heading": "Netlify",
+        "text": "Web hosting and deployment automation.",
+        "icon": "cloud",
+        "color": "blue",
+        "category": "devtool"
+      },
+      {
+        "heading": "Next.js",
+        "text": "React meta-framework with SSR, SSG, and API routes.",
+        "icon": "globe",
+        "color": "violet",
+        "category": "framework"
+      },
+      {
+        "heading": "Node.js",
+        "text": "JavaScript runtime for building server-side applications.",
+        "icon": "server",
+        "color": "violet",
+        "category": "runtime"
+      },
+      {
+        "heading": "Notion Export",
+        "text": "Knowledge base sync for documentation and wikis.",
+        "icon": "book-open",
+        "color": "gray",
+        "category": "plugin"
+      },
+      {
+        "heading": "Nuxt",
+        "text": "Vue meta-framework providing server-side rendering, file-based routing, and auto-imports for a streamlined full-stack developer experience.",
+        "icon": "globe",
+        "color": "violet",
+        "category": "framework"
+      },
+      {
+        "heading": "OAuth 2.0",
+        "text": "Authorization framework.",
+        "icon": "key",
+        "color": "rose",
+        "category": "infra"
+      },
+      {
+        "heading": "Performance Audit",
+        "text": "Identify bottlenecks.",
+        "icon": "activity",
+        "color": "gray",
+        "category": "skill"
+      },
+      {
+        "heading": "PlanetScale",
+        "text": "Serverless MySQL platform.",
+        "icon": "database",
+        "color": "rose",
+        "category": "infra"
+      },
+      {
+        "heading": "Playwright",
+        "text": "Cross-browser end-to-end testing framework that supports Chromium, Firefox, and WebKit with a single API for reliable automation.",
+        "icon": "monitor",
+        "color": "teal",
+        "category": "library"
+      },
+      {
+        "heading": "pnpm",
+        "text": "Fast, disk-efficient package manager.",
+        "icon": "download",
+        "color": "blue",
+        "category": "devtool"
+      },
+      {
+        "heading": "PostCSS",
+        "text": "CSS transformation tool with a plugin ecosystem for autoprefixing, nesting, and custom syntax.",
+        "icon": "pen-tool",
+        "color": "blue",
+        "category": "devtool"
+      },
+      {
+        "heading": "PostgreSQL",
+        "text": "Advanced open-source relational database with JSONB support, full-text search, and extensions like PostGIS for geospatial queries.",
+        "icon": "database",
+        "color": "rose",
+        "category": "infra"
+      },
+      {
+        "heading": "Prettier",
+        "text": "Opinionated code formatter.",
+        "icon": "pen-tool",
+        "color": "blue",
+        "category": "devtool"
+      },
+      {
+        "heading": "Prisma",
+        "text": "Type-safe database ORM for Node.js and TypeScript.",
+        "icon": "database",
+        "color": "teal",
+        "category": "library"
+      },
+      {
+        "heading": "Puppeteer",
+        "text": "Headless Chrome browser automation for scraping, testing, and generating PDFs.",
+        "icon": "eye",
+        "color": "teal",
+        "category": "library"
+      },
+      {
+        "heading": "Python",
+        "text": "Versatile scripting language.",
+        "icon": "terminal",
+        "color": "violet",
+        "category": "language"
+      },
+      {
+        "heading": "Radix UI",
+        "text": "Unstyled, accessible component primitives.",
+        "icon": "layers",
+        "color": "amber",
+        "category": "component"
+      },
+      {
+        "heading": "React",
+        "text": "Component-based UI library for building interactive interfaces.",
+        "icon": "layers",
+        "color": "violet",
+        "category": "framework"
+      },
+      {
+        "heading": "React DnD",
+        "text": "Drag and drop for React.",
+        "icon": "command",
+        "color": "amber",
+        "category": "component"
+      },
+      {
+        "heading": "React Hook Form",
+        "text": "Performant form validation with minimal re-renders \u2014 leverages uncontrolled components and native HTML validation for forms that stay fast at any scale.",
+        "icon": "clipboard-list",
+        "color": "amber",
+        "category": "component"
+      },
+      {
+        "heading": "React Query",
+        "text": "Server state management for data fetching, caching, and synchronization.",
+        "icon": "refresh-cw",
+        "color": "teal",
+        "category": "library"
+      },
+      {
+        "heading": "React Select",
+        "text": "Flexible, extensible select input control for React with multi-select, async loading, and creatable options.",
+        "icon": "filter",
+        "color": "amber",
+        "category": "component"
+      },
+      {
+        "heading": "React Table",
+        "text": "Headless table utilities.",
+        "icon": "grid",
+        "color": "amber",
+        "category": "component"
+      },
+      {
+        "heading": "Recharts",
+        "text": "React charting library built on D3 with a declarative component API.",
+        "icon": "chart-bar",
+        "color": "amber",
+        "category": "component"
+      },
+      {
+        "heading": "Redis",
+        "text": "In-memory data store for caching, sessions, and real-time leaderboards.",
+        "icon": "database",
+        "color": "rose",
+        "category": "infra"
+      },
+      {
+        "heading": "Redux",
+        "text": "Predictable state container.",
+        "icon": "box",
+        "color": "teal",
+        "category": "library"
+      },
+      {
+        "heading": "Refactor",
+        "text": "Intelligent code restructuring \u2014 rename symbols, extract functions, simplify conditionals, and modernize patterns while preserving behavior.",
+        "icon": "refresh-cw",
+        "color": "gray",
+        "category": "skill"
+      },
+      {
+        "heading": "Remix",
+        "text": "Full stack React framework that embraces web standards \u2014 uses native form submissions, HTTP caching, and progressive enhancement as first-class primitives.",
+        "icon": "refresh-cw",
+        "color": "violet",
+        "category": "framework"
+      },
+      {
+        "heading": "Renovate",
+        "text": "Automated dependency updates that open PRs with changelogs, test results, and merge confidence scores \u2014 keep your stack fresh without the manual toil.",
+        "icon": "refresh-cw",
+        "color": "blue",
+        "category": "devtool"
+      },
+      {
+        "heading": "Resend",
+        "text": "Email API for developers.",
+        "icon": "mail",
+        "color": "rose",
+        "category": "infra"
+      },
+      {
+        "heading": "Ruby on Rails",
+        "text": "Convention-over-configuration web framework.",
+        "icon": "package",
+        "color": "violet",
+        "category": "framework"
+      },
+      {
+        "heading": "Rust",
+        "text": "Systems programming language with memory safety guarantees enforced at compile time through ownership and borrowing, eliminating entire classes of bugs without garbage collection.",
+        "icon": "shield",
+        "color": "violet",
+        "category": "language"
+      },
+      {
+        "heading": "S3",
+        "text": "Object storage service for files, images, backups, and static assets with virtually unlimited capacity and fine-grained access controls.",
+        "icon": "hard-drive",
+        "color": "rose",
+        "category": "infra"
+      },
+      {
+        "heading": "Schema Migration",
+        "text": "Generate and review database schema changes with rollback strategies.",
+        "icon": "database",
+        "color": "gray",
+        "category": "skill"
+      },
+      {
+        "heading": "Sentry",
+        "text": "Error tracking and performance monitoring.",
+        "icon": "activity",
+        "color": "blue",
+        "category": "devtool"
+      },
+      {
+        "heading": "shadcn/ui",
+        "text": "Copy-paste UI components built on Radix \u2014 not a package, but a collection of reusable components you own and customize directly in your codebase.",
+        "icon": "layout-dashboard",
+        "color": "amber",
+        "category": "component"
+      },
+      {
+        "heading": "Sharp",
+        "text": "High-performance image processing.",
+        "icon": "image",
+        "color": "teal",
+        "category": "library"
+      },
+      {
+        "heading": "Slack Notifier",
+        "text": "Team communication bridge.",
+        "icon": "message-circle",
+        "color": "gray",
+        "category": "plugin"
+      },
+      {
+        "heading": "Socket.io",
+        "text": "Real-time bidirectional event-based communication library that handles WebSocket connections with automatic fallback to long-polling.",
+        "icon": "plug",
+        "color": "teal",
+        "category": "library"
+      },
+      {
+        "heading": "Solid.js",
+        "text": "Fine-grained reactive UI library.",
+        "icon": "zap",
+        "color": "violet",
+        "category": "framework"
+      },
+      {
+        "heading": "Sonner",
+        "text": "Toast notification component.",
+        "icon": "bell",
+        "color": "amber",
+        "category": "component"
+      },
+      {
+        "heading": "Storybook",
+        "text": "UI component development environment.",
+        "icon": "book-open",
+        "color": "teal",
+        "category": "library"
+      },
+      {
+        "heading": "Stripe",
+        "text": "Payment processing API for subscriptions, one-time charges, and marketplaces.",
+        "icon": "banknote",
+        "color": "rose",
+        "category": "infra"
+      },
+      {
+        "heading": "Supabase",
+        "text": "Open source Firebase alternative with Postgres, auth, storage, and real-time subscriptions.",
+        "icon": "cloud",
+        "color": "rose",
+        "category": "infra"
+      },
+      {
+        "heading": "Svelte",
+        "text": "Compile-time reactive framework that shifts work from runtime to build step, producing tiny bundles with no virtual DOM overhead.",
+        "icon": "sparkles",
+        "color": "violet",
+        "category": "framework"
+      },
+      {
+        "heading": "SvelteKit",
+        "text": "Full-stack Svelte app framework.",
+        "icon": "package",
+        "color": "violet",
+        "category": "framework"
+      },
+      {
+        "heading": "Tailwind CSS",
+        "text": "Utility-first CSS framework that lets you build designs directly in markup without writing custom CSS files, using composable utility classes for rapid UI development.",
+        "icon": "palette",
+        "color": "teal",
+        "category": "library"
+      },
+      {
+        "heading": "Terminal Helper",
+        "text": "CLI assistance.",
+        "icon": "terminal",
+        "color": "gray",
+        "category": "plugin"
+      },
+      {
+        "heading": "Test Generation",
+        "text": "Auto-create unit and integration tests.",
+        "icon": "check-circle",
+        "color": "gray",
+        "category": "skill"
+      },
+      {
+        "heading": "Three.js",
+        "text": "3D graphics in the browser using WebGL and WebGPU. Create immersive scenes, animations, and interactive 3D experiences.",
+        "icon": "monitor",
+        "color": "teal",
+        "category": "library"
+      },
+      {
+        "heading": "tRPC",
+        "text": "End-to-end type-safe APIs without code generation. Share types between client and server automatically through TypeScript inference.",
+        "icon": "link",
+        "color": "teal",
+        "category": "library"
+      },
+      {
+        "heading": "Turborepo",
+        "text": "High-performance monorepo build system that caches task outputs locally and remotely, so you never rebuild what hasn't changed.",
+        "icon": "repeat",
+        "color": "blue",
+        "category": "devtool"
+      },
+      {
+        "heading": "Type Inference",
+        "text": "Suggest TypeScript types for untyped code.",
+        "icon": "code",
+        "color": "gray",
+        "category": "skill"
+      },
+      {
+        "heading": "TypeScript",
+        "text": "Static typing for JavaScript that catches errors at compile time and supercharges your editor with autocomplete, refactoring, and navigation across large codebases.",
+        "icon": "code",
+        "color": "violet",
+        "category": "language"
+      },
+      {
+        "heading": "Upstash",
+        "text": "Serverless Redis and Kafka with per-request pricing \u2014 perfect for edge functions and serverless architectures where persistent connections aren't available.",
+        "icon": "hard-drive",
+        "color": "rose",
+        "category": "infra"
+      },
+      {
+        "heading": "Vaul",
+        "text": "Drawer component for React with smooth animations and snap points.",
+        "icon": "layers",
+        "color": "amber",
+        "category": "component"
+      },
+      {
+        "heading": "Vercel",
+        "text": "Frontend deployment platform with edge functions.",
+        "icon": "cloud",
+        "color": "blue",
+        "category": "devtool"
+      },
+      {
+        "heading": "Vite",
+        "text": "Next generation frontend build tool with instant HMR.",
+        "icon": "zap",
+        "color": "blue",
+        "category": "devtool"
+      },
+      {
+        "heading": "Vitest",
+        "text": "Blazing fast unit testing powered by Vite.",
+        "icon": "zap",
+        "color": "teal",
+        "category": "library"
+      },
+      {
+        "heading": "VS Code Extension",
+        "text": "Editor integration with inline suggestions, quick fixes, and context-aware completions.",
+        "icon": "monitor",
+        "color": "gray",
+        "category": "plugin"
+      },
+      {
+        "heading": "Vue.js",
+        "text": "Progressive JavaScript framework with an approachable core and a rich ecosystem of supporting libraries for routing, state management, and build tooling.",
+        "icon": "zap",
+        "color": "violet",
+        "category": "framework"
+      },
+      {
+        "heading": "Webpack",
+        "text": "Module bundler that transforms and bundles JavaScript, CSS, images, and other assets through a plugin-based architecture with code splitting support.",
+        "icon": "package",
+        "color": "blue",
+        "category": "devtool"
+      },
+      {
+        "heading": "WebSocket",
+        "text": "Full-duplex communication protocol for real-time features like chat, collaboration, and live updates.",
+        "icon": "plug",
+        "color": "rose",
+        "category": "infra"
+      },
+      {
+        "heading": "Zod",
+        "text": "TypeScript-first schema validation with static type inference.",
+        "icon": "check-circle",
+        "color": "teal",
+        "category": "library"
+      },
+      {
+        "heading": "Zustand",
+        "text": "Lightweight state management with a simple hook-based API \u2014 no providers, no boilerplate, just a store and a hook.",
+        "icon": "sparkles",
+        "color": "teal",
+        "category": "library"
+      }
+    ]
+  }
+}

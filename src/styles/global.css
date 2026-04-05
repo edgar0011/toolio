@@ -2,7 +2,7 @@
 @plugin "@tailwindcss/typography";
 
 @media (min-width: 768px) {
-  html {
+  html:has(body:not(.no-snap)) {
     scroll-snap-type: y mandatory;
   }
 }

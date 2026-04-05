@@ -4,9 +4,10 @@ import "../styles/global.css";
 interface Props {
   title: string;
   currentPath: string;
+  bodyClass?: string;
 }
 
-const { title, currentPath } = Astro.props;
+const { title, currentPath, bodyClass } = Astro.props;
 ---
 
 <!doctype html>
@@ -23,7 +24,7 @@ const { title, currentPath } = Astro.props;
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" /></noscript>
     <title>{title}</title>
   </head>
-  <body class="min-h-screen flex flex-col bg-toolio-white text-toolio-dark font-sans antialiased">
+  <body class={`min-h-screen flex flex-col bg-toolio-white text-toolio-dark font-sans antialiased ${bodyClass ?? ""}`}>
     <site-nav current={currentPath}></site-nav>
     <main class="flex-1">
       <slot />
@@ -36,5 +37,7 @@ const { title, currentPath } = Astro.props;
     <script src="../components/molecules/square.ts"></script>
     <script src="../components/compounds/hero-image.ts"></script>
     <script src="../components/compounds/photo-banner.ts"></script>
+    <script src="../components/molecules/tools-masonry.ts"></script>
+    <script src="../components/molecules/tool-card.ts"></script>
   </body>
 </html>

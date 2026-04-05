@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const toolsData = await import("../data/tools.json");
+const section = toolsData.tools;
+---
+
+<Layout title="Tools — Toolio" currentPath="/tools" bodyClass="no-snap">
+  <tools-masonry
+    section-title={section.title}
+    section-subtitle={section.subtitle}
+  >
+    {
+      section.items.map((item, i) => (
+        <tool-card
+          heading={item.heading}
+          text={item.text}
+          icon={item.icon}
+          color={item.color}
+          category={item.category}
+          data-index={String(i)}
+        />
+      ))
+    }
+  </tools-masonry>
+</Layout>
