@@ -8,15 +8,41 @@
 }
 
 @theme {
-  --color-toolio-white: #FFFFFF;
-  --color-toolio-100: #DBE2E9;
-  --color-toolio-200: #B6C5D3;
-  --color-toolio-300: #92A8BD;
-  --color-toolio-400: #6D8BA8;
-  --color-toolio-500: #496E92;
-  --color-toolio-600: #24507C;
-  --color-toolio-dark: #003366;
+  /* RunwayML-inspired cinematic palette */
+  --color-runway-black: #000000;
+  --color-runway-deep: #030303;
+  --color-runway-surface: #1a1a1a;
+  --color-runway-white: #ffffff;
+  --color-runway-cloud: #e9ecf2;
+  --color-runway-border: #27272a;
+  --color-runway-charcoal: #404040;
+  --color-runway-slate: #767d88;
+  --color-runway-mid: #7d848e;
+  --color-runway-muted: #a7a7a7;
+  --color-runway-silver: #c9ccd1;
+  --color-runway-light-silver: #d0d4d4;
+  --color-runway-footer: #999999;
 
-  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
-  --font-heading: "Plus Jakarta Sans", system-ui, sans-serif;
+  /* Legacy aliases for gradual migration */
+  --color-toolio-white: #ffffff;
+  --color-toolio-100: #e9ecf2;
+  --color-toolio-200: #c9ccd1;
+  --color-toolio-300: #a7a7a7;
+  --color-toolio-400: #767d88;
+  --color-toolio-500: #404040;
+  --color-toolio-600: #1a1a1a;
+  --color-toolio-dark: #000000;
+
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-heading: "Inter", system-ui, sans-serif;
+}
+
+/* Dark mode is default (RunwayML-style) */
+html {
+  color-scheme: dark;
+}
+
+/* Light theme override */
+html.light {
+  color-scheme: light;
 }

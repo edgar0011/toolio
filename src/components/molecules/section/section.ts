@@ -4,27 +4,19 @@ class ContentSection extends HTMLElement {
     const subtitle = this.getAttribute('section-subtitle') ?? ''
     const sectionIndex = parseInt(this.getAttribute('section-index') ?? '0')
 
-    // Gradients with specific angles/stops need arbitrary Tailwind values
-    const gradients = [
-      'bg-[linear-gradient(135deg,#ffffff_0%,#e8eef5_50%,#dbe2e9_100%)]',
-      'bg-[linear-gradient(135deg,#003366_0%,#0a4a7a_50%,#145e8e_100%)]',
-      'bg-[linear-gradient(160deg,#ffffff_0%,#edf2f7_40%,#d0dce8_100%)]',
-      'bg-[linear-gradient(145deg,#002244_0%,#003366_50%,#0d4f7a_100%)]',
-      'bg-[linear-gradient(130deg,#fafcfe_0%,#e2eaf3_50%,#d3dfeb_100%)]',
-      'bg-[linear-gradient(155deg,#003366_0%,#0a4a7a_40%,#1a6090_100%)]',
-    ]
-    const isDark = sectionIndex % 2 === 1
-    const gradient = gradients[sectionIndex % gradients.length]
-    const titleColor = isDark ? 'text-white' : 'text-toolio-dark'
-    const subtitleColor = isDark ? 'text-toolio-200' : 'text-toolio-500'
+    // RunwayML: alternate between dark and light sections
+    const isDark = sectionIndex % 2 === 0
+    const sectionBg = isDark ? 'bg-runway-black' : 'bg-runway-cloud'
+    const titleColor = isDark ? 'text-runway-white' : 'text-runway-charcoal'
+    const subtitleColor = isDark ? 'text-runway-slate' : 'text-runway-mid'
 
     const children = this.innerHTML
     this.innerHTML = `
-      <section class="flex items-center justify-center px-[4dvw] min-h-dvh pt-[6dvh] pb-[6dvh] snap-start ${gradient}">
+      <section class="flex items-center justify-center px-[4dvw] min-h-dvh pt-[6dvh] pb-[6dvh] snap-start ${sectionBg}">
         <div class="w-full max-w-7xl mx-auto">
           <div class="text-center mb-[5dvh] opacity-0 -translate-y-4 transition-all duration-600 ease-out" data-section-header>
-            <h2 class="font-bold ${titleColor} text-[clamp(1.75rem,4dvw,3rem)] mb-[1dvh]">${title}</h2>
-            <p class="${subtitleColor} max-w-2xl mx-auto text-[clamp(0.95rem,1.8dvw,1.25rem)]">${subtitle}</p>
+            <h2 class="${titleColor} text-[clamp(2rem,4dvw,3rem)] font-normal leading-[1.0] tracking-[-1px] mb-[1.5dvh]">${title}</h2>
+            <p class="${subtitleColor} max-w-2xl mx-auto text-[clamp(0.95rem,1.8dvw,1.25rem)] leading-[1.4] tracking-[-0.16px]">${subtitle}</p>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[clamp(1rem,2dvw,2rem)]">
             ${children}

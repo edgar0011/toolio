@@ -39,7 +39,7 @@ describe('SiteNav', () => {
     })
   })
 
-  it('highlights the current path link', () => {
+  it('highlights the current path link with white text', () => {
     el.setAttribute('current', '/tools')
     document.body.appendChild(el)
 
@@ -47,8 +47,8 @@ describe('SiteNav', () => {
     const toolsLink = Array.from(links).find((a) => a.getAttribute('href') === '/tools')
     const homeLink = Array.from(links).find((a) => a.getAttribute('href') === '/')
 
-    expect(toolsLink!.className).toContain('underline')
-    expect(homeLink!.className).not.toContain('underline')
+    expect(toolsLink!.className).toContain('text-runway-white')
+    expect(homeLink!.className).toContain('text-runway-slate')
   })
 
   it('defaults current path to / when not set', () => {
@@ -57,7 +57,7 @@ describe('SiteNav', () => {
     const links = el.querySelectorAll('ul a')
     const homeLink = Array.from(links).find((a) => a.getAttribute('href') === '/')
 
-    expect(homeLink!.className).toContain('underline')
+    expect(homeLink!.className).toContain('text-runway-white')
   })
 
   it('sets sticky positioning styles', () => {

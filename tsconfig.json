@@ -28,5 +28,5 @@
     "noUncheckedSideEffectImports": true
   },
   "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  "exclude": ["dist", "astro.config.mjs"]
 }
