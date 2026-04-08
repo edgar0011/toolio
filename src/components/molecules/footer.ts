@@ -7,8 +7,8 @@ class SiteFooter extends HTMLElement {
           <p class="mt-1">Built with love for makers everywhere.</p>
         </div>
       </footer>
-    `;
+    `
   }
 }
 
-customElements.define("site-footer", SiteFooter);
+customElements.define('site-footer', SiteFooter)

@@ -68,8 +68,8 @@ class PhotoBanner extends HTMLElement {
           </div>
         </div>
       </div>
-    `;
+    `
   }
 }
 
-customElements.define("photo-banner", PhotoBanner);
+customElements.define('photo-banner', PhotoBanner)

@@ -1,15 +1,15 @@
 class ToolsMasonry extends HTMLElement {
-  private _resizeObserver: ResizeObserver | null = null;
-  private _allCards: HTMLElement[] = [];
-  private _categories: string[] = [];
-  private _activeCategory = "";
-  private _searchQuery = "";
+  private _resizeObserver: ResizeObserver | null = null
+  private _allCards: HTMLElement[] = []
+  private _categories: string[] = []
+  private _activeCategory = ''
+  private _searchQuery = ''
 
   connectedCallback() {
-    const title = this.getAttribute("section-title") ?? "";
-    const subtitle = this.getAttribute("section-subtitle") ?? "";
+    const title = this.getAttribute('section-title') ?? ''
+    const subtitle = this.getAttribute('section-subtitle') ?? ''
 
-    const children = this.innerHTML;
+    const children = this.innerHTML
     this.innerHTML = `
       <section class="px-[4dvw] pt-[clamp(5rem,10dvh,8rem)] pb-[6dvh] bg-[linear-gradient(135deg,#ffffff_0%,#e8eef5_50%,#dbe2e9_100%)] min-h-dvh">
         <div class="w-full max-w-[90rem] mx-auto">
@@ -43,86 +43,92 @@ class ToolsMasonry extends HTMLElement {
           </div>
         </div>
       </section>
-    `;
+    `
 
-    const header = this.querySelector("[data-section-header]") as HTMLElement;
+    const header = this.querySelector('[data-section-header]') as HTMLElement
     requestAnimationFrame(() => {
-      header.style.opacity = "1";
-      header.style.transform = "translateY(0)";
-    });
+      header.style.opacity = '1'
+      header.style.transform = 'translateY(0)'
+    })
 
-    this._allCards = Array.from(this.querySelectorAll<HTMLElement>("tool-card"));
+    this._allCards = Array.from(this.querySelectorAll<HTMLElement>('tool-card'))
 
     // Collect unique categories
-    const catSet = new Set<string>();
+    const catSet = new Set<string>()
     for (const card of this._allCards) {
-      const cat = card.getAttribute("category") ?? "";
-      if (cat) catSet.add(cat);
+      const cat = card.getAttribute('category') ?? ''
+      if (cat) {
+        catSet.add(cat)
+      }
     }
-    this._categories = Array.from(catSet).sort();
-    this._renderFilters();
+    this._categories = Array.from(catSet).sort()
+    this._renderFilters()
 
     // Search input
-    const input = this.querySelector("[data-search]") as HTMLInputElement;
-    const clearBtn = this.querySelector("[data-clear]") as HTMLElement;
-    const kbd = this.querySelector("[data-kbd]") as HTMLElement;
-    const searchIcon = this.querySelector("[data-search-icon]") as HTMLElement;
+    const input = this.querySelector('[data-search]') as HTMLInputElement
+    const clearBtn = this.querySelector('[data-clear]') as HTMLElement
+    const kbd = this.querySelector('[data-kbd]') as HTMLElement
+    const searchIcon = this.querySelector('[data-search-icon]') as HTMLElement
 
-    input.addEventListener("input", () => {
-      this._searchQuery = input.value.trim().toLowerCase();
-      const hasValue = input.value.length > 0;
-      clearBtn.style.opacity = hasValue ? "1" : "0";
-      clearBtn.style.pointerEvents = hasValue ? "auto" : "none";
-      if (kbd) kbd.style.display = hasValue ? "none" : "";
-      searchIcon.style.color = hasValue ? "var(--color-toolio-600)" : "";
-      this._filter();
-    });
+    input.addEventListener('input', () => {
+      this._searchQuery = input.value.trim().toLowerCase()
+      const hasValue = input.value.length > 0
+      clearBtn.style.opacity = hasValue ? '1' : '0'
+      clearBtn.style.pointerEvents = hasValue ? 'auto' : 'none'
+      if (kbd) {
+        kbd.style.display = hasValue ? 'none' : ''
+      }
+      searchIcon.style.color = hasValue ? 'var(--color-toolio-600)' : ''
+      this._filter()
+    })
 
-    clearBtn.addEventListener("click", () => {
-      input.value = "";
-      this._searchQuery = "";
-      clearBtn.style.opacity = "0";
-      clearBtn.style.pointerEvents = "none";
-      if (kbd) kbd.style.display = "";
-      searchIcon.style.color = "";
-      input.focus();
-      this._filter();
-    });
+    clearBtn.addEventListener('click', () => {
+      input.value = ''
+      this._searchQuery = ''
+      clearBtn.style.opacity = '0'
+      clearBtn.style.pointerEvents = 'none'
+      if (kbd) {
+        kbd.style.display = ''
+      }
+      searchIcon.style.color = ''
+      input.focus()
+      this._filter()
+    })
 
     // Keyboard shortcut: "/" to focus search
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "/" && document.activeElement !== input) {
-        e.preventDefault();
-        input.focus();
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== input) {
+        e.preventDefault()
+        input.focus()
       }
-      if (e.key === "Escape" && document.activeElement === input) {
-        input.blur();
+      if (e.key === 'Escape' && document.activeElement === input) {
+        input.blur()
       }
-    });
+    })
 
     // Run layout after cards have rendered
     requestAnimationFrame(() => {
-      requestAnimationFrame(() => this._filter());
-    });
+      requestAnimationFrame(() => this._filter())
+    })
 
     // Re-layout on resize
-    this._resizeObserver = new ResizeObserver(() => this._layout());
-    this._resizeObserver.observe(this.querySelector("[data-masonry]")!);
+    this._resizeObserver = new ResizeObserver(() => this._layout())
+    this._resizeObserver.observe(this.querySelector('[data-masonry]')!)
   }
 
   disconnectedCallback() {
-    this._resizeObserver?.disconnect();
+    this._resizeObserver?.disconnect()
   }
 
   private _renderFilters() {
-    const container = this.querySelector("[data-filters]") as HTMLElement;
+    const container = this.querySelector('[data-filters]') as HTMLElement
     const pills = [
-      { label: "All", value: "" },
+      { label: 'All', value: '' },
       ...this._categories.map((c) => ({
         label: c.charAt(0).toUpperCase() + c.slice(1),
         value: c,
       })),
-    ];
+    ]
 
     container.innerHTML = pills
       .map(
@@ -133,136 +139,145 @@ class ToolsMasonry extends HTMLElement {
       >${p.label}</button>
     `,
       )
-      .join("");
+      .join('')
 
-    this._updateFilterStyles();
+    this._updateFilterStyles()
 
-    container.addEventListener("click", (e) => {
-      const btn = (e.target as HTMLElement).closest("[data-filter]") as HTMLElement;
-      if (!btn) return;
-      this._activeCategory = btn.dataset.filter ?? "";
-      this._updateFilterStyles();
-      this._filter();
-    });
+    container.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest('[data-filter]') as HTMLElement
+      if (!btn) {
+        return
+      }
+      this._activeCategory = btn.dataset.filter ?? ''
+      this._updateFilterStyles()
+      this._filter()
+    })
   }
 
   private _updateFilterStyles() {
-    const buttons = this.querySelectorAll<HTMLElement>("[data-filter]");
+    const buttons = this.querySelectorAll<HTMLElement>('[data-filter]')
     for (const btn of buttons) {
-      const isActive = btn.dataset.filter === this._activeCategory;
+      const isActive = btn.dataset.filter === this._activeCategory
       if (isActive) {
         btn.className =
-          "px-4 py-1.5 rounded-full text-[clamp(0.7rem,1.1dvw,0.8rem)] font-medium transition-all duration-200 border border-toolio-600 bg-toolio-dark text-white shadow-[0_2px_8px_rgba(0,51,102,0.2)]";
+          'px-4 py-1.5 rounded-full text-[clamp(0.7rem,1.1dvw,0.8rem)] font-medium transition-all duration-200 border border-toolio-600 bg-toolio-dark text-white shadow-[0_2px_8px_rgba(0,51,102,0.2)]'
       } else {
         btn.className =
-          "px-4 py-1.5 rounded-full text-[clamp(0.7rem,1.1dvw,0.8rem)] font-medium transition-all duration-200 border border-toolio-100 bg-white/60 text-toolio-500 hover:border-toolio-300 hover:text-toolio-dark hover:bg-white";
+          'px-4 py-1.5 rounded-full text-[clamp(0.7rem,1.1dvw,0.8rem)] font-medium transition-all duration-200 border border-toolio-100 bg-white/60 text-toolio-500 hover:border-toolio-300 hover:text-toolio-dark hover:bg-white'
       }
     }
   }
 
   private _filter() {
-    const query = this._searchQuery;
-    const category = this._activeCategory;
-    let visible = 0;
+    const query = this._searchQuery
+    const category = this._activeCategory
+    let visible = 0
 
     for (const card of this._allCards) {
-      const heading = (card.getAttribute("heading") ?? "").toLowerCase();
-      const text = (card.getAttribute("text") ?? "").toLowerCase();
-      const cat = card.getAttribute("category") ?? "";
+      const heading = (card.getAttribute('heading') ?? '').toLowerCase()
+      const cat = card.getAttribute('category') ?? ''
 
-      const matchesSearch = !query || heading.includes(query);
-      const matchesCategory = !category || cat === category;
-      const show = matchesSearch && matchesCategory;
+      const matchesSearch = !query || heading.includes(query)
+      const matchesCategory = !category || cat === category
+      const show = matchesSearch && matchesCategory
 
-      card.style.display = show ? "" : "none";
-      if (show) visible++;
+      card.style.display = show ? '' : 'none'
+      if (show) {
+        visible++
+      }
     }
 
     // Update count
-    const countEl = this.querySelector("[data-count]") as HTMLElement;
+    const countEl = this.querySelector('[data-count]') as HTMLElement
     if (countEl) {
-      const total = this._allCards.length;
-      countEl.textContent =
-        visible === total ? `${total} tools` : `${visible} of ${total} tools`;
+      const total = this._allCards.length
+      countEl.textContent = visible === total ? `${total} tools` : `${visible} of ${total} tools`
     }
 
-    this._layout();
+    this._layout()
   }
 
   private _layout() {
-    const container = this.querySelector("[data-masonry]") as HTMLElement;
-    if (!container) return;
-
-    const cards = this._allCards.filter((c) => c.style.display !== "none");
-
-    if (cards.length === 0) {
-      container.style.height = "0px";
-      return;
+    const container = this.querySelector('[data-masonry]') as HTMLElement
+    if (!container) {
+      return
     }
 
-    const containerWidth = container.offsetWidth;
-    const gap = Math.min(Math.max(containerWidth * 0.015, 12), 16);
+    const cards = this._allCards.filter((c) => c.style.display !== 'none')
 
-    let cols = 1;
-    if (containerWidth >= 1280) cols = 5;
-    else if (containerWidth >= 1024) cols = 4;
-    else if (containerWidth >= 768) cols = 3;
-    else if (containerWidth >= 640) cols = 2;
+    if (cards.length === 0) {
+      container.style.height = '0px'
+      return
+    }
 
-    const colWidth = (containerWidth - gap * (cols - 1)) / cols;
-    const colHeights = Array.from({ length: cols }, () => 0);
+    const containerWidth = container.offsetWidth
+    const gap = Math.min(Math.max(containerWidth * 0.015, 12), 16)
+
+    let cols = 1
+    if (containerWidth >= 1280) {
+      cols = 5
+    } else if (containerWidth >= 1024) {
+      cols = 4
+    } else if (containerWidth >= 768) {
+      cols = 3
+    } else if (containerWidth >= 640) {
+      cols = 2
+    }
+
+    const colWidth = (containerWidth - gap * (cols - 1)) / cols
+    const colHeights = Array.from({ length: cols }, () => 0)
 
     // Prepare for measurement
     for (const card of cards) {
-      card.style.position = "absolute";
-      card.style.width = `${colWidth}px`;
-      card.style.visibility = "hidden";
-      card.style.left = "0";
-      card.style.top = "0";
+      card.style.position = 'absolute'
+      card.style.width = `${colWidth}px`
+      card.style.visibility = 'hidden'
+      card.style.left = '0'
+      card.style.top = '0'
     }
 
-    const heights = cards.map((card) => card.offsetHeight);
+    const heights = cards.map((card) => card.offsetHeight)
 
     for (let i = 0; i < cards.length; i++) {
-      const card = cards[i];
-      const shortestCol = colHeights.indexOf(Math.min(...colHeights));
-      const x = shortestCol * (colWidth + gap);
-      const y = colHeights[shortestCol];
+      const card = cards[i]
+      const shortestCol = colHeights.indexOf(Math.min(...colHeights))
+      const x = shortestCol * (colWidth + gap)
+      const y = colHeights[shortestCol]
 
-      card.style.left = `${x}px`;
-      card.style.top = `${y}px`;
-      card.style.visibility = "";
+      card.style.left = `${x}px`
+      card.style.top = `${y}px`
+      card.style.visibility = ''
 
-      colHeights[shortestCol] = y + heights[i] + gap;
+      colHeights[shortestCol] = y + heights[i] + gap
     }
 
-    const maxH = Math.max(...colHeights);
-    container.style.height = `${maxH > gap ? maxH - gap : 0}px`;
+    const maxH = Math.max(...colHeights)
+    container.style.height = `${maxH > gap ? maxH - gap : 0}px`
 
     // Fade-in with IntersectionObserver (only once per card)
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            const inner = entry.target.querySelector("[data-card]") as HTMLElement;
+            const inner = entry.target.querySelector('[data-card]') as HTMLElement
             if (inner) {
-              inner.style.opacity = "1";
-              inner.style.transform = "translateY(0)";
+              inner.style.opacity = '1'
+              inner.style.transform = 'translateY(0)'
             }
-            observer.unobserve(entry.target);
+            observer.unobserve(entry.target)
           }
         }
       },
-      { threshold: 0.1, rootMargin: "50px" },
-    );
+      { threshold: 0.1, rootMargin: '50px' },
+    )
 
     for (const card of cards) {
-      const inner = card.querySelector("[data-card]") as HTMLElement;
-      if (inner && inner.style.opacity !== "1") {
-        observer.observe(card);
+      const inner = card.querySelector('[data-card]') as HTMLElement
+      if (inner && inner.style.opacity !== '1') {
+        observer.observe(card)
       }
     }
   }
 }
 
-customElements.define("tools-masonry", ToolsMasonry);
+customElements.define('tools-masonry', ToolsMasonry)
