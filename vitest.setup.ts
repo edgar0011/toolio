@@ -14,4 +14,20 @@ if (typeof window !== 'undefined') {
       dispatchEvent: vi.fn(),
     })),
   })
+
+  // Mock IntersectionObserver for components that use it
+  class MockIntersectionObserver {
+    callback: IntersectionObserverCallback
+    observe = vi.fn()
+    unobserve = vi.fn()
+    disconnect = vi.fn()
+    constructor(callback: IntersectionObserverCallback) {
+      this.callback = callback
+    }
+  }
+
+  Object.defineProperty(window, 'IntersectionObserver', {
+    writable: true,
+    value: MockIntersectionObserver,
+  })
 }
