@@ -8,9 +8,14 @@ interface Props {
 }
 
 const { title, currentPath, bodyClass } = Astro.props;
+
+const appName = __APP_NAME__;
+const appVersion = __APP_VERSION__;
+const versionComment = `<!-- app name: ${appName} -->\n<!-- app version: ${appVersion} -->`;
 ---
 
 <!doctype html>
+<Fragment set:html={versionComment} />
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
