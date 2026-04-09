@@ -2,7 +2,7 @@ import createElement from 'lucide/dist/esm/createElement.js'
 
 import { ICONS } from './tool-card.helpers.js'
 
-const getThemeShadow = (token: string): string =>
+const getShadow = (token: string): string =>
   getComputedStyle(document.documentElement).getPropertyValue(token).trim() || 'none'
 
 class ToolCard extends HTMLElement {
@@ -17,7 +17,7 @@ class ToolCard extends HTMLElement {
         <div class="flex items-start gap-3 mb-2">
           ${iconName ? `<div class="shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-lg" style="background:var(--t-icon-bg);color:var(--t-icon)" data-icon-slot></div>` : ''}
           <div class="min-w-0">
-            <h3 class="font-normal text-t-text text-[clamp(0.85rem,1.4dvw,1rem)] leading-[1.0] tracking-normal">${heading}</h3>
+            <h3 class="font-normal text-t-text text-[clamp(0.85rem,1.4dvw,1rem)] leading-none tracking-normal">${heading}</h3>
             ${category ? `<span class="text-[0.65rem] uppercase tracking-[0.35px] text-t-text-secondary font-[450]">${category}</span>` : ''}
           </div>
         </div>
@@ -40,8 +40,11 @@ class ToolCard extends HTMLElement {
     const card = this.querySelector('[data-card]') as HTMLElement
 
     card.addEventListener('mouseenter', () => {
+      // Detect card surface brightness at hover time
+      const isDarkCard = document.documentElement.classList.contains('dark')
+      const token = isDarkCard ? '--t-shadow-hover-on-dark' : '--t-shadow-hover-on-light'
       card.style.transform = 'translateY(-8px)'
-      card.style.boxShadow = getThemeShadow('--t-shadow-hover')
+      card.style.boxShadow = getShadow(token)
     })
     card.addEventListener('mouseleave', () => {
       card.style.transform = 'translateY(0)'

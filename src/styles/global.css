@@ -77,9 +77,9 @@
   --t-icon-alt: #404040;
   --t-icon-bg-alt: rgba(0, 0, 0, 0.05);
 
-  /* Shadows */
-  --t-shadow-rest: 0 1px 3px rgba(255, 255, 255, 0.03);
-  --t-shadow-hover: 0 16px 48px rgba(255, 255, 255, 0.15), 0 6px 16px rgba(255, 255, 255, 0.08);
+  /* Shadows — per card surface, not per theme */
+  --t-shadow-hover-on-dark: 0 16px 48px rgba(255, 255, 255, 0.12), 0 6px 16px rgba(255, 255, 255, 0.06);
+  --t-shadow-hover-on-light: 0 20px 50px rgba(0, 0, 0, 0.18), 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* ── Light theme ── */
@@ -112,7 +112,7 @@
   --t-icon-alt: #1d1d1f;
   --t-icon-bg-alt: rgba(0, 0, 0, 0.04);
 
-  /* Shadows */
-  --t-shadow-rest: 0 1px 4px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
-  --t-shadow-hover: 0 20px 50px rgba(0, 0, 0, 0.18), 0 8px 20px rgba(0, 0, 0, 0.1);
+  /* Shadows — same values, card surface determines which to use */
+  --t-shadow-hover-on-dark: 0 16px 48px rgba(255, 255, 255, 0.12), 0 6px 16px rgba(255, 255, 255, 0.06);
+  --t-shadow-hover-on-light: 0 20px 50px rgba(0, 0, 0, 0.18), 0 8px 20px rgba(0, 0, 0, 0.1);
 }
