@@ -7,6 +7,42 @@
   }
 }
 
+/* ── Size-adjusted fallback matching Inter metrics ── */
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("Arial");
+  size-adjust: 107%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
+/* ── Pre-hydration sizing: reserve space before JS runs ── */
+content-section {
+  display: block;
+  min-height: 100dvh;
+}
+
+content-square {
+  display: block;
+  min-height: clamp(160px, 22dvh, 260px);
+}
+
+site-nav {
+  display: block;
+  min-height: 3.5rem;
+}
+
+site-footer {
+  display: block;
+}
+
+photo-banner,
+hero-image,
+tools-masonry {
+  display: block;
+}
+
 /* ── Raw palette (static, never changes) ── */
 @theme {
   --color-runway-black: #000000;
@@ -37,8 +73,8 @@
   --color-t-icon: var(--t-icon);
   --color-t-icon-bg: var(--t-icon-bg);
 
-  --font-sans: "Inter", system-ui, sans-serif;
-  --font-heading: "Inter", system-ui, sans-serif;
+  --font-sans: "Inter", "Inter Fallback", system-ui, sans-serif;
+  --font-heading: "Inter", "Inter Fallback", system-ui, sans-serif;
 }
 
 /* ── Dark theme (default) ── */
