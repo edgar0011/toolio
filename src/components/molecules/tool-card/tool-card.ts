@@ -10,7 +10,7 @@ class ToolCard extends HTMLElement {
     const category = this.getAttribute('category') ?? ''
 
     this.innerHTML = `
-      <div class="rounded-lg flex flex-col justify-start p-[clamp(1rem,2dvw,1.5rem)] bg-t-surface border border-t-border opacity-0 -translate-y-5 transition-all duration-500 ease-out" data-card>
+      <div class="rounded-lg flex flex-col justify-start p-[clamp(1rem,2dvw,1.5rem)] bg-t-surface border border-t-border opacity-0 -translate-y-8 transition-all duration-500 ease-out" style="box-shadow: var(--t-shadow-rest)" data-card>
         <div class="flex items-start gap-3 mb-2">
           ${iconName ? `<div class="shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-lg" style="background:var(--t-icon-bg);color:var(--t-icon)" data-icon-slot></div>` : ''}
           <div class="min-w-0">
@@ -36,10 +36,12 @@ class ToolCard extends HTMLElement {
 
     const card = this.querySelector('[data-card]') as HTMLElement
     card.addEventListener('mouseenter', () => {
-      card.style.transform = 'translateY(-2px)'
+      card.style.transform = 'translateY(-6px)'
+      card.style.boxShadow = 'var(--t-shadow-hover)'
     })
     card.addEventListener('mouseleave', () => {
       card.style.transform = 'translateY(0)'
+      card.style.boxShadow = 'var(--t-shadow-rest)'
     })
   }
 }

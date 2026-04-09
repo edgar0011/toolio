@@ -84,7 +84,7 @@ describe('ContentSquare', () => {
 
     const card = el.querySelector('[data-card]')
     expect(card!.className).toContain('opacity-0')
-    expect(card!.className).toContain('-translate-y-5')
+    expect(card!.className).toContain('-translate-y-8')
   })
 
   it('applies hover transform on mouseenter and resets on mouseleave', () => {
@@ -94,10 +94,12 @@ describe('ContentSquare', () => {
 
     const card = el.querySelector('[data-card]') as HTMLElement
     card.dispatchEvent(new Event('mouseenter'))
-    expect(card.style.transform).toBe('translateY(-2px)')
+    expect(card.style.transform).toBe('translateY(-6px)')
+    expect(card.style.boxShadow).toBe('var(--t-shadow-hover)')
 
     card.dispatchEvent(new Event('mouseleave'))
     expect(card.style.transform).toBe('translateY(0)')
+    expect(card.style.boxShadow).toBe('var(--t-shadow-rest)')
   })
 })
 

@@ -23,7 +23,7 @@ class ContentSquare extends HTMLElement {
     const iconBgVar = isPrimary ? 'var(--t-icon-bg)' : 'var(--t-icon-bg-alt)'
 
     this.innerHTML = `
-      <div class="rounded-lg flex flex-col justify-start p-[clamp(1.25rem,2.5dvw,2.5rem)] min-h-[clamp(160px,22dvh,260px)] opacity-0 -translate-y-5 transition-all duration-500 ease-out ${cardClasses}" data-card>
+      <div class="rounded-lg flex flex-col justify-start p-[clamp(1.25rem,2.5dvw,2.5rem)] min-h-[clamp(160px,22dvh,260px)] opacity-0 -translate-y-8 transition-all duration-500 ease-out ${cardClasses}" style="box-shadow: var(--t-shadow-rest)" data-card>
         ${iconName ? `<div class="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-lg" style="background:${iconBgVar};color:${iconColorVar}" data-icon-slot></div>` : ''}
         <h3 class="${headingColor} text-[clamp(1rem,1.8dvw,1.25rem)] font-normal leading-[1.0] tracking-normal mb-3">${heading}</h3>
         <p class="${textColor} leading-[1.4] tracking-[-0.16px] text-[clamp(0.8rem,1.3dvw,0.95rem)]">${text}</p>
@@ -44,10 +44,12 @@ class ContentSquare extends HTMLElement {
 
     const card = this.querySelector('[data-card]') as HTMLElement
     card.addEventListener('mouseenter', () => {
-      card.style.transform = 'translateY(-2px)'
+      card.style.transform = 'translateY(-6px)'
+      card.style.boxShadow = 'var(--t-shadow-hover)'
     })
     card.addEventListener('mouseleave', () => {
       card.style.transform = 'translateY(0)'
+      card.style.boxShadow = 'var(--t-shadow-rest)'
     })
   }
 }
