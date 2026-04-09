@@ -40,8 +40,8 @@ describe('ContentSection', () => {
     expect(grid!.querySelectorAll('.child-item').length).toBe(2)
   })
 
-  it('applies primary theme for even section indexes', () => {
-    el.setAttribute('section-title', 'Primary')
+  it('applies uniform theme for all sections', () => {
+    el.setAttribute('section-title', 'Any Section')
     el.setAttribute('section-subtitle', '')
     el.setAttribute('section-index', '0')
     document.body.appendChild(el)
@@ -51,30 +51,19 @@ describe('ContentSection', () => {
 
     const section = el.querySelector('section')
     expect(section!.className).toContain('bg-t-bg')
-    expect(section!.getAttribute('data-section-primary')).toBe('true')
   })
 
-  it('applies alt theme for odd section indexes', () => {
-    el.setAttribute('section-title', 'Alt')
+  it('uses same theme regardless of section index', () => {
+    el.setAttribute('section-title', 'Odd Section')
     el.setAttribute('section-subtitle', '')
     el.setAttribute('section-index', '1')
     document.body.appendChild(el)
 
     const h2 = el.querySelector('h2')
-    expect(h2!.className).toContain('text-t-text-heading-alt')
+    expect(h2!.className).toContain('text-t-text-heading')
 
     const section = el.querySelector('section')
-    expect(section!.className).toContain('bg-t-bg-alt')
-    expect(section!.getAttribute('data-section-primary')).toBe('false')
-  })
-
-  it('defaults section-index to 0 when missing', () => {
-    el.setAttribute('section-title', 'Default')
-    el.setAttribute('section-subtitle', '')
-    document.body.appendChild(el)
-
-    const h2 = el.querySelector('h2')
-    expect(h2!.className).toContain('text-t-text-heading')
+    expect(section!.className).toContain('bg-t-bg')
   })
 
   it('creates an IntersectionObserver on the section', () => {

@@ -34,7 +34,7 @@ class ToolsMasonry extends HTMLElement {
 
           <div class="flex flex-wrap justify-center gap-2 mb-[3dvh]" data-filters></div>
 
-          <div class="flex items-center justify-between mb-5">
+          <div class="text-right mb-6 pb-6">
             <span class="text-t-text-secondary text-[clamp(0.75rem,1.2dvw,0.85rem)]" data-count></span>
           </div>
 

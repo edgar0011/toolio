@@ -53,9 +53,9 @@ describe('ContentSquare', () => {
     expect(iconSlot).toBeNull()
   })
 
-  it('uses primary theme for even section index', () => {
+  it('uses uniform theme regardless of section index', () => {
     section.setAttribute('section-index', '0')
-    el.setAttribute('heading', 'Primary')
+    el.setAttribute('heading', 'Card')
     el.setAttribute('text', 'Desc')
     document.body.appendChild(section)
 
@@ -66,14 +66,14 @@ describe('ContentSquare', () => {
     expect(h3!.className).toContain('text-t-text-heading')
   })
 
-  it('uses alt theme for odd section index', () => {
+  it('uses same theme for odd section index', () => {
     section.setAttribute('section-index', '1')
-    el.setAttribute('heading', 'Alt')
+    el.setAttribute('heading', 'Card')
     el.setAttribute('text', 'Desc')
     document.body.appendChild(section)
 
     const card = el.querySelector('[data-card]')
-    expect(card!.className).toContain('bg-t-surface-alt')
+    expect(card!.className).toContain('bg-t-surface')
   })
 
   it('renders card with initial hidden styles for animation', () => {

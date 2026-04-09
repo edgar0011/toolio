@@ -40,11 +40,8 @@ class ToolCard extends HTMLElement {
     const card = this.querySelector('[data-card]') as HTMLElement
 
     card.addEventListener('mouseenter', () => {
-      // Detect card surface brightness at hover time
-      const isDarkCard = document.documentElement.classList.contains('dark')
-      const token = isDarkCard ? '--t-shadow-hover-on-dark' : '--t-shadow-hover-on-light'
       card.style.transform = 'translateY(-8px)'
-      card.style.boxShadow = getShadow(token)
+      card.style.boxShadow = getShadow('--t-shadow-hover')
     })
     card.addEventListener('mouseleave', () => {
       card.style.transform = 'translateY(0)'

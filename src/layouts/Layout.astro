@@ -29,18 +29,11 @@ const versionComment = `<!-- app name: ${appName} -->\n<!-- app version: ${appVe
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600&display=swap" /></noscript>
     <script is:inline>
       // Apply theme class before first paint to prevent flash
-      // Mirrors @e1011/es-kit setThemeClassNames + observeThemePreference pattern
       (function() {
-        var body = document.documentElement
-        var stored = localStorage.getItem('theme')
-        if (stored === 'light' || stored === 'dark') {
-          body.classList.remove('dark', 'light')
-          body.classList.add(stored)
-        } else {
-          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-          body.classList.remove('dark', 'light')
-          body.classList.add(prefersDark ? 'dark' : 'light')
-        }
+        var el = document.documentElement
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+        el.classList.remove('dark', 'light')
+        el.classList.add(prefersDark ? 'dark' : 'light')
       })()
     </script>
     <title>{title}</title>

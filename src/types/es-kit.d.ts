@@ -3,11 +3,6 @@ declare module '@e1011/es-kit/dist/utils/esm/src/core/utils/helpers/ui.js' {
   export type ThemeMap = { dark: string; light: string }
   export const getBaseThemes: (element?: HTMLElement) => ThemeMap
   export const setThemeClassNames: (themes: ThemeMap, element?: HTMLElement) => void
-  export const switchColorTheme: (
-    isDark: boolean,
-    htmlElement?: HTMLElement,
-    findShadows?: boolean,
-  ) => void
   export const updateColorTheme: (isDark?: boolean, htmlElement?: HTMLElement) => void
   export const observeThemePreference: (
     getHtmlElement?: () => HTMLElement,

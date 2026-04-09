@@ -2,16 +2,12 @@
 import {
   observeThemePreference,
   setThemeClassNames,
-  switchColorTheme,
 } from '@e1011/es-kit/dist/utils/esm/src/core/utils/helpers/ui.js'
 
 import { NAV_LINKS } from './nav.helpers'
 
-const SUN_ICON = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`
-const MOON_ICON = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`
-
-// Configure theme class names (es-kit pattern)
-setThemeClassNames({ dark: 'dark', light: 'light' })
+// Configure theme class names on documentElement (must match the element passed to observeThemePreference)
+setThemeClassNames({ dark: 'dark', light: 'light' }, document.documentElement)
 
 class SiteNav extends HTMLElement {
   private _cleanupObserver: (() => void) | null = null
@@ -25,7 +21,7 @@ class SiteNav extends HTMLElement {
     this.style.display = 'block'
 
     this.innerHTML = `
-      <nav class="text-t-text px-6 flex items-center justify-between bg-[var(--t-nav-bg)] backdrop-blur-md border-b border-[var(--t-border-nav)] py-[1.1rem] transition-[padding,background-color] duration-300 ease-out" data-nav>
+      <nav class="text-t-text px-6 flex items-center justify-between bg-[var(--t-nav-bg)] backdrop-blur-md border-b border-[var(--t-border-nav)] py-[1.1rem] transition-[padding,background-color] duration-300 ease-out shadow-[var(--t-shadow-nav)]" data-nav>
         <a href="/" class="font-medium tracking-[-0.5px] text-[1.5rem] transition-[font-size] duration-300 ease-out text-t-text" data-logo>Toolio</a>
         <div class="flex items-center gap-6">
           <ul class="flex gap-6 list-none m-0 p-0">
@@ -43,9 +39,6 @@ class SiteNav extends HTMLElement {
             `,
             ).join('')}
           </ul>
-          <button class="flex items-center justify-center w-8 h-8 rounded-lg text-t-text-secondary hover:text-t-text transition-colors duration-200 border border-transparent hover:border-[var(--t-border)]" data-theme-toggle aria-label="Toggle theme">
-            ${this._isDark() ? SUN_ICON : MOON_ICON}
-          </button>
         </div>
       </nav>
     `
@@ -66,34 +59,12 @@ class SiteNav extends HTMLElement {
 
     window.addEventListener('scroll', onScroll, { passive: true })
 
-    const toggleBtn = this.querySelector('[data-theme-toggle]') as HTMLElement
-
-    // Manual toggle — overrides system preference
-    toggleBtn.addEventListener('click', () => {
-      const isDark = this._isDark()
-      const newIsDark = !isDark
-      switchColorTheme(newIsDark, document.documentElement)
-      localStorage.setItem('theme', newIsDark ? 'dark' : 'light')
-      toggleBtn.innerHTML = newIsDark ? SUN_ICON : MOON_ICON
-    })
-
-    // Observe system preference changes (es-kit observeThemePreference)
-    this._cleanupObserver = observeThemePreference(
-      () => document.documentElement,
-      (isDark) => {
-        if (!localStorage.getItem('theme')) {
-          toggleBtn.innerHTML = isDark ? SUN_ICON : MOON_ICON
-        }
-      },
-    )
+    // Observe system preference and apply theme automatically
+    this._cleanupObserver = observeThemePreference(() => document.documentElement)
   }
 
   disconnectedCallback() {
     this._cleanupObserver?.()
-  }
-
-  private _isDark(): boolean {
-    return document.documentElement.classList.contains('dark')
   }
 }
 

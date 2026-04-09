@@ -81,12 +81,11 @@ describe('SiteNav', () => {
     addSpy.mockRestore()
   })
 
-  it('renders a theme toggle button', () => {
+  it('does not render a theme toggle button', () => {
     document.body.appendChild(el)
 
     const toggleBtn = el.querySelector('[data-theme-toggle]')
-    expect(toggleBtn).toBeTruthy()
-    expect(toggleBtn!.querySelector('svg')).toBeTruthy()
+    expect(toggleBtn).toBeNull()
   })
 })
 
