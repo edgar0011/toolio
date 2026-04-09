@@ -52,23 +52,23 @@
   color-scheme: dark;
 
   /* Page & sections */
-  --t-bg: #000000;
-  --t-bg-alt: #e9ecf2;
-  --t-surface: #1a1a1a;
+  --t-bg: #18181b;
+  --t-bg-alt: #f0f0f3;
+  --t-surface: #27272a;
   --t-surface-alt: #ffffff;
-  --t-border: #27272a;
-  --t-border-nav: rgba(39, 39, 42, 0.5);
+  --t-border: #3f3f46;
+  --t-border-nav: rgba(63, 63, 70, 0.5);
 
   /* Text */
-  --t-text: #ffffff;
-  --t-text-heading: #ffffff;
+  --t-text: #fafafa;
+  --t-text-heading: #fafafa;
   --t-text-heading-alt: #404040;
-  --t-text-secondary: #767d88;
-  --t-text-muted: #a7a7a7;
-  --t-text-footer: #999999;
+  --t-text-secondary: #a1a1aa;
+  --t-text-muted: #a1a1aa;
+  --t-text-footer: #a1a1aa;
 
   /* Nav */
-  --t-nav-bg: rgba(0, 0, 0, 0.8);
+  --t-nav-bg: rgba(24, 24, 27, 0.85);
 
   /* Icons — primary (dark) sections */
   --t-icon: #767d88;
