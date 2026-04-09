@@ -40,33 +40,32 @@ describe('ContentSection', () => {
     expect(grid!.querySelectorAll('.child-item').length).toBe(2)
   })
 
-  it('applies dark theme for even section indexes', () => {
-    el.setAttribute('section-title', 'Dark')
+  it('applies primary theme for even section indexes', () => {
+    el.setAttribute('section-title', 'Primary')
     el.setAttribute('section-subtitle', '')
     el.setAttribute('section-index', '0')
     document.body.appendChild(el)
 
     const h2 = el.querySelector('h2')
-    expect(h2!.className).toContain('text-runway-white')
+    expect(h2!.className).toContain('text-t-text-heading')
 
     const section = el.querySelector('section')
-    expect(section!.className).toContain('bg-runway-black')
+    expect(section!.className).toContain('bg-t-bg')
+    expect(section!.getAttribute('data-section-primary')).toBe('true')
   })
 
-  it('applies light theme for odd section indexes', () => {
-    el.setAttribute('section-title', 'Light')
+  it('applies alt theme for odd section indexes', () => {
+    el.setAttribute('section-title', 'Alt')
     el.setAttribute('section-subtitle', '')
     el.setAttribute('section-index', '1')
     document.body.appendChild(el)
 
     const h2 = el.querySelector('h2')
-    expect(h2!.className).toContain('text-runway-charcoal')
-
-    const p = el.querySelector('[data-section-header] p')
-    expect(p!.className).toContain('text-runway-mid')
+    expect(h2!.className).toContain('text-t-text-heading-alt')
 
     const section = el.querySelector('section')
-    expect(section!.className).toContain('bg-runway-cloud')
+    expect(section!.className).toContain('bg-t-bg-alt')
+    expect(section!.getAttribute('data-section-primary')).toBe('false')
   })
 
   it('defaults section-index to 0 when missing', () => {
@@ -75,8 +74,7 @@ describe('ContentSection', () => {
     document.body.appendChild(el)
 
     const h2 = el.querySelector('h2')
-    // Index 0 = dark theme
-    expect(h2!.className).toContain('text-runway-white')
+    expect(h2!.className).toContain('text-t-text-heading')
   })
 
   it('creates an IntersectionObserver on the section', () => {
@@ -88,7 +86,6 @@ describe('ContentSection', () => {
     const section = el.querySelector('section')
     expect(section).toBeTruthy()
 
-    // IntersectionObserver.observe was called (via our mock)
     expect(IntersectionObserver.prototype.observe || true).toBeTruthy()
   })
 

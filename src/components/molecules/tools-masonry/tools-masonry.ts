@@ -11,31 +11,31 @@ class ToolsMasonry extends HTMLElement {
 
     const children = this.innerHTML
     this.innerHTML = `
-      <section class="px-[4dvw] pt-[clamp(5rem,10dvh,8rem)] pb-[6dvh] bg-runway-black min-h-dvh">
+      <section class="px-[4dvw] pt-[clamp(5rem,10dvh,8rem)] pb-[6dvh] bg-t-bg min-h-dvh">
         <div class="w-full max-w-[90rem] mx-auto">
           <div class="text-center mb-[3dvh] opacity-0 -translate-y-4 transition-all duration-600 ease-out" data-section-header>
-            <h2 class="font-normal text-runway-white text-[clamp(2rem,4dvw,3rem)] leading-[1.0] tracking-[-1px] mb-[1.5dvh]">${title}</h2>
-            <p class="text-runway-slate max-w-2xl mx-auto text-[clamp(0.95rem,1.8dvw,1.25rem)] leading-[1.4] tracking-[-0.16px]">${subtitle}</p>
+            <h2 class="font-normal text-t-text-heading text-[clamp(2rem,4dvw,3rem)] leading-[1.0] tracking-[-1px] mb-[1.5dvh]">${title}</h2>
+            <p class="text-t-text-secondary max-w-2xl mx-auto text-[clamp(0.95rem,1.8dvw,1.25rem)] leading-[1.4] tracking-[-0.16px]">${subtitle}</p>
           </div>
 
           <div class="max-w-xl mx-auto mb-[1.5dvh] relative" data-search-wrap>
-            <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-runway-slate pointer-events-none transition-colors duration-200" data-search-icon fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-t-text-secondary pointer-events-none transition-colors duration-200" data-search-icon fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
             <input
               type="text"
               placeholder="Search 120 tools…"
-              class="w-full pl-12 pr-12 py-3.5 rounded-lg bg-runway-surface border border-runway-border text-runway-white placeholder-runway-muted text-[clamp(0.85rem,1.4dvw,1rem)] tracking-[-0.16px] outline-none transition-all duration-200 focus:border-runway-silver"
+              class="w-full pl-12 pr-12 py-3.5 rounded-lg bg-t-surface border border-t-border text-t-text placeholder-t-text-muted text-[clamp(0.85rem,1.4dvw,1rem)] tracking-[-0.16px] outline-none transition-all duration-200 focus:border-runway-silver"
               data-search
             />
-            <button class="absolute right-3 top-1/2 -translate-y-1/2 w-7 h-7 rounded flex items-center justify-center text-runway-slate hover:text-runway-white transition-all duration-150 opacity-0 pointer-events-none" data-clear>
+            <button class="absolute right-3 top-1/2 -translate-y-1/2 w-7 h-7 rounded flex items-center justify-center text-t-text-secondary hover:text-t-text transition-all duration-150 opacity-0 pointer-events-none" data-clear>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
             </button>
-            <kbd class="absolute right-3 top-1/2 -translate-y-1/2 hidden sm:inline-flex items-center px-2 py-0.5 rounded bg-runway-surface text-runway-muted text-[0.65rem] font-mono border border-runway-border pointer-events-none" data-kbd>/</kbd>
+            <kbd class="absolute right-3 top-1/2 -translate-y-1/2 hidden sm:inline-flex items-center px-2 py-0.5 rounded bg-t-surface text-t-text-muted text-[0.65rem] font-mono border border-t-border pointer-events-none" data-kbd>/</kbd>
           </div>
 
           <div class="flex flex-wrap justify-center gap-2 mb-[3dvh]" data-filters></div>
 
           <div class="flex items-center justify-between mb-5">
-            <span class="text-runway-slate text-[clamp(0.75rem,1.2dvw,0.85rem)]" data-count></span>
+            <span class="text-t-text-secondary text-[clamp(0.75rem,1.2dvw,0.85rem)]" data-count></span>
           </div>
 
           <div class="relative" data-masonry>
@@ -78,7 +78,7 @@ class ToolsMasonry extends HTMLElement {
       if (kbd) {
         kbd.style.display = hasValue ? 'none' : ''
       }
-      searchIcon.style.color = hasValue ? '#ffffff' : ''
+      searchIcon.style.color = hasValue ? 'var(--t-text)' : ''
       this._filter()
     })
 
@@ -160,10 +160,10 @@ class ToolsMasonry extends HTMLElement {
       const isActive = btn.dataset.filter === this._activeCategory
       if (isActive) {
         btn.className =
-          'px-4 py-1.5 rounded text-[clamp(0.7rem,1.1dvw,0.8rem)] font-normal tracking-[-0.16px] transition-all duration-200 border border-runway-silver bg-runway-white text-runway-black'
+          'px-4 py-1.5 rounded text-[clamp(0.7rem,1.1dvw,0.8rem)] font-normal tracking-[-0.16px] transition-all duration-200 border border-t-text-secondary bg-t-text text-t-bg'
       } else {
         btn.className =
-          'px-4 py-1.5 rounded text-[clamp(0.7rem,1.1dvw,0.8rem)] font-normal tracking-[-0.16px] transition-all duration-200 border border-runway-border bg-transparent text-runway-slate hover:border-runway-silver hover:text-runway-white'
+          'px-4 py-1.5 rounded text-[clamp(0.7rem,1.1dvw,0.8rem)] font-normal tracking-[-0.16px] transition-all duration-200 border border-t-border bg-transparent text-t-text-secondary hover:border-t-text-secondary hover:text-t-text'
       }
     }
   }

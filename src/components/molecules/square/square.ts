@@ -11,21 +11,20 @@ class ContentSquare extends HTMLElement {
       this.closest('content-section')?.getAttribute('section-index') ?? '0',
     )
 
-    const isDarkSection = sectionIndex % 2 === 0
-    // RunwayML: monochrome icon treatment
-    const iconColor = isDarkSection ? '#767d88' : '#404040'
-    const iconBg = isDarkSection ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.05)'
-    const headingColor = isDarkSection ? 'text-runway-white' : 'text-runway-charcoal'
-    const textColor = isDarkSection ? 'text-runway-slate' : 'text-runway-mid'
+    const isPrimary = sectionIndex % 2 === 0
+    const headingColor = isPrimary ? 'text-t-text-heading' : 'text-t-text-heading-alt'
+    const textColor = 'text-t-text-secondary'
 
-    // RunwayML: zero shadows, minimal border on dark, nothing on light
-    const cardClasses = isDarkSection
-      ? 'bg-runway-surface border border-runway-border'
-      : 'bg-runway-white'
+    // Primary sections: surface card + border; Alt sections: alt-surface card, no border
+    const cardClasses = isPrimary ? 'bg-t-surface border border-t-border' : 'bg-t-surface-alt'
+
+    // Icon colors follow section type
+    const iconColorVar = isPrimary ? 'var(--t-icon)' : 'var(--t-icon-alt)'
+    const iconBgVar = isPrimary ? 'var(--t-icon-bg)' : 'var(--t-icon-bg-alt)'
 
     this.innerHTML = `
       <div class="rounded-lg flex flex-col justify-start p-[clamp(1.25rem,2.5dvw,2.5rem)] min-h-[clamp(160px,22dvh,260px)] opacity-0 -translate-y-5 transition-all duration-500 ease-out ${cardClasses}" data-card>
-        ${iconName ? `<div class="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-lg" style="background:${iconBg};color:${iconColor}" data-icon-slot></div>` : ''}
+        ${iconName ? `<div class="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-lg" style="background:${iconBgVar};color:${iconColorVar}" data-icon-slot></div>` : ''}
         <h3 class="${headingColor} text-[clamp(1rem,1.8dvw,1.25rem)] font-normal leading-[1.0] tracking-normal mb-3">${heading}</h3>
         <p class="${textColor} leading-[1.4] tracking-[-0.16px] text-[clamp(0.8rem,1.3dvw,0.95rem)]">${text}</p>
       </div>
@@ -43,7 +42,6 @@ class ContentSquare extends HTMLElement {
       }
     }
 
-    // RunwayML: subtle hover — no shadow, just slight lift
     const card = this.querySelector('[data-card]') as HTMLElement
     card.addEventListener('mouseenter', () => {
       card.style.transform = 'translateY(-2px)'

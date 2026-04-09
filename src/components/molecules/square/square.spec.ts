@@ -9,7 +9,6 @@ describe('ContentSquare', () => {
   let section: HTMLElement
 
   beforeEach(() => {
-    // ContentSquare reads section-index from its parent content-section
     section = document.createElement('content-section')
     section.setAttribute('section-index', '0')
     el = document.createElement('content-square')
@@ -42,7 +41,6 @@ describe('ContentSquare', () => {
 
     const iconSlot = el.querySelector('[data-icon-slot]')
     expect(iconSlot).toBeTruthy()
-    // Lucide createElement appends an SVG
     expect(iconSlot!.querySelector('svg')).toBeTruthy()
   })
 
@@ -55,31 +53,28 @@ describe('ContentSquare', () => {
     expect(iconSlot).toBeNull()
   })
 
-  it('uses dark theme for even section index (dark-first)', () => {
+  it('uses primary theme for even section index', () => {
     section.setAttribute('section-index', '0')
-    el.setAttribute('heading', 'Dark')
+    el.setAttribute('heading', 'Primary')
     el.setAttribute('text', 'Desc')
     document.body.appendChild(section)
 
     const card = el.querySelector('[data-card]')
-    expect(card!.className).toContain('bg-runway-surface')
-    expect(card!.className).toContain('border-runway-border')
+    expect(card!.className).toContain('bg-t-surface')
+    expect(card!.className).toContain('border-t-border')
 
-    const p = el.querySelector('p')
-    expect(p!.className).toContain('text-runway-slate')
+    const h3 = el.querySelector('h3')
+    expect(h3!.className).toContain('text-t-text-heading')
   })
 
-  it('uses light theme for odd section index', () => {
+  it('uses alt theme for odd section index', () => {
     section.setAttribute('section-index', '1')
-    el.setAttribute('heading', 'Light')
+    el.setAttribute('heading', 'Alt')
     el.setAttribute('text', 'Desc')
     document.body.appendChild(section)
 
     const card = el.querySelector('[data-card]')
-    expect(card!.className).toContain('bg-runway-white')
-
-    const p = el.querySelector('p')
-    expect(p!.className).toContain('text-runway-mid')
+    expect(card!.className).toContain('bg-t-surface-alt')
   })
 
   it('renders card with initial hidden styles for animation', () => {

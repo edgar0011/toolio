@@ -3,11 +3,11 @@ class PhotoBanner extends HTMLElement {
     this.innerHTML = `
       <div class="flex flex-col min-h-dvh snap-start">
         <!-- Cinematic image area -->
-        <div class="relative flex-1 flex items-center justify-center px-6 overflow-hidden bg-runway-black">
+        <div class="relative flex-1 flex items-center justify-center px-6 overflow-hidden bg-t-bg">
           <div class="max-w-7xl w-full mx-auto relative py-10">
-            <p class="text-center text-runway-slate text-[0.69rem] font-[450] tracking-[0.35px] uppercase mb-6">Trusted by forward-thinking teams worldwide</p>
+            <p class="text-center text-t-text-secondary text-[0.69rem] font-[450] tracking-[0.35px] uppercase mb-6">Trusted by forward-thinking teams worldwide</p>
 
-            <div class="relative rounded-lg overflow-hidden border border-runway-border">
+            <div class="relative rounded-lg overflow-hidden border border-t-border">
               <img
                 src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&h=600&fit=crop&crop=center&q=80"
                 alt="Business team collaborating around computer screens in a modern office"
@@ -19,17 +19,17 @@ class PhotoBanner extends HTMLElement {
 
               <div class="absolute bottom-6 left-8 right-8 flex items-end justify-between">
                 <div>
-                  <p class="text-runway-white font-normal text-lg tracking-[-0.5px]">Real teams. Real results.</p>
-                  <p class="text-runway-slate text-[0.81rem] tracking-[-0.16px]">Join 10,000+ professionals using Toolio daily</p>
+                  <p class="text-white font-normal text-lg tracking-[-0.5px]">Real teams. Real results.</p>
+                  <p class="text-white/70 text-[0.81rem] tracking-[-0.16px]">Join 10,000+ professionals using Toolio daily</p>
                 </div>
-                <div class="flex gap-6 text-runway-white text-center">
+                <div class="flex gap-6 text-white text-center">
                   <div>
                     <p class="text-2xl font-normal tracking-[-1px]">98%</p>
-                    <p class="text-[0.69rem] text-runway-slate uppercase tracking-[0.35px] font-[450]">Satisfaction</p>
+                    <p class="text-[0.69rem] text-white/70 uppercase tracking-[0.35px] font-[450]">Satisfaction</p>
                   </div>
                   <div>
                     <p class="text-2xl font-normal tracking-[-1px]">4.9</p>
-                    <p class="text-[0.69rem] text-runway-slate uppercase tracking-[0.35px] font-[450]">Rating</p>
+                    <p class="text-[0.69rem] text-white/70 uppercase tracking-[0.35px] font-[450]">Rating</p>
                   </div>
                 </div>
               </div>
@@ -38,26 +38,26 @@ class PhotoBanner extends HTMLElement {
         </div>
 
         <!-- Stats strip -->
-        <div class="py-10 px-6 bg-runway-surface border-t border-runway-border">
+        <div class="py-10 px-6 bg-t-surface border-t border-t-border">
           <div class="max-w-4xl mx-auto flex items-center justify-center gap-10 flex-wrap">
             <div class="text-center">
-              <p class="text-2xl font-normal tracking-[-1px] text-runway-white">10,000+</p>
-              <p class="text-[0.69rem] text-runway-slate uppercase tracking-[0.35px] font-[450]">Teams</p>
+              <p class="text-2xl font-normal tracking-[-1px] text-t-text">10,000+</p>
+              <p class="text-[0.69rem] text-t-text-secondary uppercase tracking-[0.35px] font-[450]">Teams</p>
             </div>
-            <div class="w-px h-8 bg-runway-border"></div>
+            <div class="w-px h-8 bg-t-border"></div>
             <div class="text-center">
-              <p class="text-2xl font-normal tracking-[-1px] text-runway-white">50M+</p>
-              <p class="text-[0.69rem] text-runway-slate uppercase tracking-[0.35px] font-[450]">Tasks completed</p>
+              <p class="text-2xl font-normal tracking-[-1px] text-t-text">50M+</p>
+              <p class="text-[0.69rem] text-t-text-secondary uppercase tracking-[0.35px] font-[450]">Tasks completed</p>
             </div>
-            <div class="w-px h-8 bg-runway-border"></div>
+            <div class="w-px h-8 bg-t-border"></div>
             <div class="text-center">
-              <p class="text-2xl font-normal tracking-[-1px] text-runway-white">99.9%</p>
-              <p class="text-[0.69rem] text-runway-slate uppercase tracking-[0.35px] font-[450]">Uptime</p>
+              <p class="text-2xl font-normal tracking-[-1px] text-t-text">99.9%</p>
+              <p class="text-[0.69rem] text-t-text-secondary uppercase tracking-[0.35px] font-[450]">Uptime</p>
             </div>
-            <div class="w-px h-8 bg-runway-border"></div>
+            <div class="w-px h-8 bg-t-border"></div>
             <div class="text-center">
-              <p class="text-2xl font-normal tracking-[-1px] text-runway-white">142</p>
-              <p class="text-[0.69rem] text-runway-slate uppercase tracking-[0.35px] font-[450]">Countries</p>
+              <p class="text-2xl font-normal tracking-[-1px] text-t-text">142</p>
+              <p class="text-[0.69rem] text-t-text-secondary uppercase tracking-[0.35px] font-[450]">Countries</p>
             </div>
           </div>
         </div>

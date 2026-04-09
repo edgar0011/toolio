@@ -2,9 +2,9 @@ class HeroImage extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <div class="flex flex-col min-h-dvh snap-start">
-      <div class="relative flex-1 flex items-center justify-center px-6 overflow-hidden bg-runway-deep">
+      <div class="relative flex-1 flex items-center justify-center px-6 overflow-hidden bg-t-bg">
         <div class="max-w-7xl w-full mx-auto">
-          <div class="relative rounded-lg overflow-hidden border border-runway-border">
+          <div class="relative rounded-lg overflow-hidden border border-t-border">
             <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full block h-[70dvh] object-cover">
               <!-- Window frame -->
               <rect width="1440" height="900" rx="8" fill="#0a0a0a"/>
@@ -165,26 +165,26 @@ class HeroImage extends HTMLElement {
       </div>
 
       <!-- Stats strip -->
-      <div class="py-10 px-6 bg-runway-surface border-t border-runway-border">
+      <div class="py-10 px-6 bg-t-surface border-t border-t-border">
         <div class="max-w-4xl mx-auto flex items-center justify-center gap-10 flex-wrap">
           <div class="text-center">
-            <p class="text-2xl font-normal tracking-[-1px] text-runway-white">200+</p>
-            <p class="text-[0.69rem] text-runway-slate uppercase tracking-[0.35px] font-[450]">Integrations</p>
+            <p class="text-2xl font-normal tracking-[-1px] text-t-text">200+</p>
+            <p class="text-[0.69rem] text-t-text-secondary uppercase tracking-[0.35px] font-[450]">Integrations</p>
           </div>
-          <div class="w-px h-8 bg-runway-border"></div>
+          <div class="w-px h-8 bg-t-border"></div>
           <div class="text-center">
-            <p class="text-2xl font-normal tracking-[-1px] text-runway-white">4.9/5</p>
-            <p class="text-[0.69rem] text-runway-slate uppercase tracking-[0.35px] font-[450]">User rating</p>
+            <p class="text-2xl font-normal tracking-[-1px] text-t-text">4.9/5</p>
+            <p class="text-[0.69rem] text-t-text-secondary uppercase tracking-[0.35px] font-[450]">User rating</p>
           </div>
-          <div class="w-px h-8 bg-runway-border"></div>
+          <div class="w-px h-8 bg-t-border"></div>
           <div class="text-center">
-            <p class="text-2xl font-normal tracking-[-1px] text-runway-white">24/7</p>
-            <p class="text-[0.69rem] text-runway-slate uppercase tracking-[0.35px] font-[450]">Support</p>
+            <p class="text-2xl font-normal tracking-[-1px] text-t-text">24/7</p>
+            <p class="text-[0.69rem] text-t-text-secondary uppercase tracking-[0.35px] font-[450]">Support</p>
           </div>
-          <div class="w-px h-8 bg-runway-border"></div>
+          <div class="w-px h-8 bg-t-border"></div>
           <div class="text-center">
-            <p class="text-2xl font-normal tracking-[-1px] text-runway-white">SOC 2</p>
-            <p class="text-[0.69rem] text-runway-slate uppercase tracking-[0.35px] font-[450]">Certified</p>
+            <p class="text-2xl font-normal tracking-[-1px] text-t-text">SOC 2</p>
+            <p class="text-[0.69rem] text-t-text-secondary uppercase tracking-[0.35px] font-[450]">Certified</p>
           </div>
         </div>
       </div>

@@ -7,8 +7,8 @@
   }
 }
 
+/* ── Raw palette (static, never changes) ── */
 @theme {
-  /* RunwayML-inspired cinematic palette */
   --color-runway-black: #000000;
   --color-runway-deep: #030303;
   --color-runway-surface: #1a1a1a;
@@ -23,26 +23,116 @@
   --color-runway-light-silver: #d0d4d4;
   --color-runway-footer: #999999;
 
-  /* Legacy aliases for gradual migration */
-  --color-toolio-white: #ffffff;
-  --color-toolio-100: #e9ecf2;
-  --color-toolio-200: #c9ccd1;
-  --color-toolio-300: #a7a7a7;
-  --color-toolio-400: #767d88;
-  --color-toolio-500: #404040;
-  --color-toolio-600: #1a1a1a;
-  --color-toolio-dark: #000000;
+  /* ── Semantic theme tokens (resolve to CSS vars) ── */
+  --color-t-bg: var(--t-bg);
+  --color-t-bg-alt: var(--t-bg-alt);
+  --color-t-surface: var(--t-surface);
+  --color-t-surface-alt: var(--t-surface-alt);
+  --color-t-border: var(--t-border);
+  --color-t-border-nav: var(--t-border-nav);
+  --color-t-text: var(--t-text);
+  --color-t-text-heading: var(--t-text-heading);
+  --color-t-text-heading-alt: var(--t-text-heading-alt);
+  --color-t-text-secondary: var(--t-text-secondary);
+  --color-t-text-muted: var(--t-text-muted);
+  --color-t-text-footer: var(--t-text-footer);
+  --color-t-nav-bg: var(--t-nav-bg);
+  --color-t-icon: var(--t-icon);
+  --color-t-icon-bg: var(--t-icon-bg);
+  --color-t-icon-alt: var(--t-icon-alt);
+  --color-t-icon-bg-alt: var(--t-icon-bg-alt);
 
   --font-sans: "Inter", system-ui, sans-serif;
   --font-heading: "Inter", system-ui, sans-serif;
 }
 
-/* Dark mode is default (RunwayML-style) */
-html {
+/* ── Dark theme (default) ── */
+:root,
+[data-theme="dark"] {
   color-scheme: dark;
+
+  /* Page & sections */
+  --t-bg: #000000;
+  --t-bg-alt: #e9ecf2;
+  --t-surface: #1a1a1a;
+  --t-surface-alt: #ffffff;
+  --t-border: #27272a;
+  --t-border-nav: rgba(39, 39, 42, 0.5);
+
+  /* Text */
+  --t-text: #ffffff;
+  --t-text-heading: #ffffff;
+  --t-text-heading-alt: #404040;
+  --t-text-secondary: #767d88;
+  --t-text-muted: #a7a7a7;
+  --t-text-footer: #999999;
+
+  /* Nav */
+  --t-nav-bg: rgba(0, 0, 0, 0.8);
+
+  /* Icons — primary (dark) sections */
+  --t-icon: #767d88;
+  --t-icon-bg: rgba(255, 255, 255, 0.06);
+  /* Icons — alt (light) sections */
+  --t-icon-alt: #404040;
+  --t-icon-bg-alt: rgba(0, 0, 0, 0.05);
 }
 
-/* Light theme override */
-html.light {
+/* ── Light theme ── */
+[data-theme="light"] {
   color-scheme: light;
+
+  /* Page & sections */
+  --t-bg: #ffffff;
+  --t-bg-alt: #e9ecf2;
+  --t-surface: #fefefe;
+  --t-surface-alt: #ffffff;
+  --t-border: #e9ecf2;
+  --t-border-nav: rgba(233, 236, 242, 0.7);
+
+  /* Text */
+  --t-text: #000000;
+  --t-text-heading: #000000;
+  --t-text-heading-alt: #404040;
+  --t-text-secondary: #767d88;
+  --t-text-muted: #7d848e;
+  --t-text-footer: #767d88;
+
+  /* Nav */
+  --t-nav-bg: rgba(255, 255, 255, 0.8);
+
+  /* Icons — primary (light) sections */
+  --t-icon: #404040;
+  --t-icon-bg: rgba(0, 0, 0, 0.05);
+  /* Icons — alt sections */
+  --t-icon-alt: #404040;
+  --t-icon-bg-alt: rgba(0, 0, 0, 0.05);
+}
+
+/* System preference fallback when no data-theme is set */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    color-scheme: light;
+
+    --t-bg: #ffffff;
+    --t-bg-alt: #e9ecf2;
+    --t-surface: #fefefe;
+    --t-surface-alt: #ffffff;
+    --t-border: #e9ecf2;
+    --t-border-nav: rgba(233, 236, 242, 0.7);
+
+    --t-text: #000000;
+    --t-text-heading: #000000;
+    --t-text-heading-alt: #404040;
+    --t-text-secondary: #767d88;
+    --t-text-muted: #7d848e;
+    --t-text-footer: #767d88;
+
+    --t-nav-bg: rgba(255, 255, 255, 0.8);
+
+    --t-icon: #404040;
+    --t-icon-bg: rgba(0, 0, 0, 0.05);
+    --t-icon-alt: #404040;
+    --t-icon-bg-alt: rgba(0, 0, 0, 0.05);
+  }
 }

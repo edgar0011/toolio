@@ -4,15 +4,15 @@ class ContentSection extends HTMLElement {
     const subtitle = this.getAttribute('section-subtitle') ?? ''
     const sectionIndex = parseInt(this.getAttribute('section-index') ?? '0')
 
-    // RunwayML: alternate between dark and light sections
-    const isDark = sectionIndex % 2 === 0
-    const sectionBg = isDark ? 'bg-runway-black' : 'bg-runway-cloud'
-    const titleColor = isDark ? 'text-runway-white' : 'text-runway-charcoal'
-    const subtitleColor = isDark ? 'text-runway-slate' : 'text-runway-mid'
+    // Even = primary (page bg), Odd = alt (contrast bg)
+    const isPrimary = sectionIndex % 2 === 0
+    const sectionBg = isPrimary ? 'bg-t-bg' : 'bg-t-bg-alt'
+    const titleColor = isPrimary ? 'text-t-text-heading' : 'text-t-text-heading-alt'
+    const subtitleColor = 'text-t-text-secondary'
 
     const children = this.innerHTML
     this.innerHTML = `
-      <section class="flex items-center justify-center px-[4dvw] min-h-dvh pt-[6dvh] pb-[6dvh] snap-start ${sectionBg}">
+      <section class="flex items-center justify-center px-[4dvw] min-h-dvh pt-[6dvh] pb-[6dvh] snap-start ${sectionBg}" data-section-primary="${isPrimary}">
         <div class="w-full max-w-7xl mx-auto">
           <div class="text-center mb-[5dvh] opacity-0 -translate-y-4 transition-all duration-600 ease-out" data-section-header>
             <h2 class="${titleColor} text-[clamp(2rem,4dvw,3rem)] font-normal leading-[1.0] tracking-[-1px] mb-[1.5dvh]">${title}</h2>

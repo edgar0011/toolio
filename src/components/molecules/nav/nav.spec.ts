@@ -39,7 +39,7 @@ describe('SiteNav', () => {
     })
   })
 
-  it('highlights the current path link with white text', () => {
+  it('highlights the current path link', () => {
     el.setAttribute('current', '/tools')
     document.body.appendChild(el)
 
@@ -47,8 +47,9 @@ describe('SiteNav', () => {
     const toolsLink = Array.from(links).find((a) => a.getAttribute('href') === '/tools')
     const homeLink = Array.from(links).find((a) => a.getAttribute('href') === '/')
 
-    expect(toolsLink!.className).toContain('text-runway-white')
-    expect(homeLink!.className).toContain('text-runway-slate')
+    // Active link uses text-t-text, inactive uses text-t-text-secondary
+    expect(toolsLink!.className).toContain('text-t-text')
+    expect(homeLink!.className).toContain('text-t-text-secondary')
   })
 
   it('defaults current path to / when not set', () => {
@@ -57,7 +58,7 @@ describe('SiteNav', () => {
     const links = el.querySelectorAll('ul a')
     const homeLink = Array.from(links).find((a) => a.getAttribute('href') === '/')
 
-    expect(homeLink!.className).toContain('text-runway-white')
+    expect(homeLink!.className).not.toContain('text-t-text-secondary')
   })
 
   it('sets sticky positioning styles', () => {
@@ -78,6 +79,14 @@ describe('SiteNav', () => {
     expect(scrollCall![2]).toEqual({ passive: true })
 
     addSpy.mockRestore()
+  })
+
+  it('renders a theme toggle button', () => {
+    document.body.appendChild(el)
+
+    const toggleBtn = el.querySelector('[data-theme-toggle]')
+    expect(toggleBtn).toBeTruthy()
+    expect(toggleBtn!.querySelector('svg')).toBeTruthy()
   })
 })
 
