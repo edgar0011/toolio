@@ -75,6 +75,7 @@ describe('ContentSquare', () => {
 
     const card = el.querySelector('[data-card]')
     expect(card!.className).toContain('bg-t-surface-alt')
+    expect(card!.className).toContain('border-t-border')
   })
 
   it('renders card with initial hidden styles for animation', () => {

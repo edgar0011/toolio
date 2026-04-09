@@ -18,7 +18,9 @@ class ContentSquare extends HTMLElement {
     const headingColor = isPrimary ? 'text-t-text-heading' : 'text-t-text-heading-alt'
     const textColor = 'text-t-text-secondary'
 
-    const cardClasses = isPrimary ? 'bg-t-surface border border-t-border' : 'bg-t-surface-alt'
+    const cardClasses = isPrimary
+      ? 'bg-t-surface border border-t-border'
+      : 'bg-t-surface-alt border border-t-border'
 
     const iconColorVar = isPrimary ? 'var(--t-icon)' : 'var(--t-icon-alt)'
     const iconBgVar = isPrimary ? 'var(--t-icon-bg)' : 'var(--t-icon-bg-alt)'
