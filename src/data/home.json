@@ -15,12 +15,12 @@
     "title": "Features",
     "subtitle": "Everything you need, nothing you don't",
     "squares": [
-      { "heading": "Task Boards", "text": "Drag-and-drop boards with customizable workflows for every team.", "icon": "layout-dashboard" },
-      { "heading": "Time Tracking", "text": "Automatic time tracking that runs silently in the background.", "icon": "clock" },
-      { "heading": "Integrations", "text": "Connect with 200+ tools your team already uses daily.", "icon": "plug" },
-      { "heading": "Templates", "text": "Pre-built templates for sprints, roadmaps, and retrospectives.", "icon": "file-text" },
-      { "heading": "Automations", "text": "Set rules once and let Toolio handle the repetitive tasks.", "icon": "bot" },
-      { "heading": "API Access", "text": "Full REST and GraphQL APIs for custom integrations.", "icon": "code" }
+      { "heading": "Task Boards", "text": "Drag-and-drop boards with customizable workflows for every team.", "icon": "layout-dashboard", "color": "blue" },
+      { "heading": "Time Tracking", "text": "Automatic time tracking that runs silently in the background.", "icon": "clock", "color": "amber" },
+      { "heading": "Integrations", "text": "Connect with 200+ tools your team already uses daily.", "icon": "plug", "color": "teal" },
+      { "heading": "Templates", "text": "Pre-built templates for sprints, roadmaps, and retrospectives.", "icon": "file-text", "color": "violet" },
+      { "heading": "Automations", "text": "Set rules once and let Toolio handle the repetitive tasks.", "icon": "bot", "color": "rose" },
+      { "heading": "API Access", "text": "Full REST and GraphQL APIs for custom integrations.", "icon": "code", "color": "gray" }
     ]
   },
   "howItWorks": {
@@ -39,12 +39,12 @@
     "title": "Pricing",
     "subtitle": "Plans that grow with you",
     "squares": [
-      { "heading": "Starter", "text": "Free for up to 5 users. Includes basic boards and time tracking.", "icon": "sparkles" },
-      { "heading": "Team", "text": "$12/user/mo. Unlimited boards, integrations, and automations.", "icon": "users" },
-      { "heading": "Business", "text": "$29/user/mo. Advanced analytics, SSO, and priority support.", "icon": "building" },
-      { "heading": "Enterprise", "text": "Custom pricing. Dedicated infrastructure and SLA guarantees.", "icon": "crown" },
-      { "heading": "Add-ons", "text": "Extra storage, advanced reporting, and custom branding available.", "icon": "package" },
-      { "heading": "Non-Profit", "text": "50% discount for qualified non-profit organizations.", "icon": "heart" }
+      { "heading": "Starter", "text": "Free for up to 5 users. Includes basic boards and time tracking.", "icon": "sparkles", "color": "amber" },
+      { "heading": "Team", "text": "$12/user/mo. Unlimited boards, integrations, and automations.", "icon": "users", "color": "blue" },
+      { "heading": "Business", "text": "$29/user/mo. Advanced analytics, SSO, and priority support.", "icon": "building", "color": "violet" },
+      { "heading": "Enterprise", "text": "Custom pricing. Dedicated infrastructure and SLA guarantees.", "icon": "crown", "color": "rose" },
+      { "heading": "Add-ons", "text": "Extra storage, advanced reporting, and custom branding available.", "icon": "package", "color": "teal" },
+      { "heading": "Non-Profit", "text": "50% discount for qualified non-profit organizations.", "icon": "heart", "color": "gray" }
     ]
   },
   "testimonials": {

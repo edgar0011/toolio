@@ -21,8 +21,8 @@ class SiteNav extends HTMLElement {
     this.style.display = 'block'
 
     this.innerHTML = `
-      <nav class="text-t-text px-6 flex items-center justify-between bg-[var(--t-nav-bg)] backdrop-blur-md border-b border-[var(--t-border-nav)] py-[1.1rem] transition-[padding,background-color] duration-300 ease-out shadow-[var(--t-shadow-nav)]" data-nav>
-        <a href="/" class="font-medium tracking-[-0.5px] text-[1.5rem] transition-[font-size] duration-300 ease-out text-t-text" data-logo>Toolio</a>
+      <nav class="text-t-text px-6 flex items-center justify-between bg-[var(--t-nav-bg)] backdrop-blur-md border-b border-[var(--t-border-nav)] py-[0.2rem] transition-[padding,background-color] duration-300 ease-out shadow-[var(--t-shadow-nav)]" data-nav>
+        <a href="/" class="font-medium tracking-[-0.5px] text-[2.5rem] transition-[font-size] duration-300 ease-out text-t-text" data-logo>Toolio</a>
         <div class="flex items-center gap-6">
           <ul class="flex gap-6 list-none m-0 p-0">
             ${NAV_LINKS.map(
@@ -51,9 +51,9 @@ class SiteNav extends HTMLElement {
       const isScrolled = window.scrollY > 100
       if (isScrolled !== scrolled) {
         scrolled = isScrolled
-        logo.style.fontSize = scrolled ? '1.25rem' : '1.5rem'
-        nav.style.paddingTop = scrolled ? '0.65rem' : '1.1rem'
-        nav.style.paddingBottom = scrolled ? '0.65rem' : '1.1rem'
+        logo.style.fontSize = scrolled ? '1.25rem' : '2rem'
+        nav.style.paddingTop = scrolled ? '0.5rem' : '0.8rem'
+        nav.style.paddingBottom = scrolled ? '0.5rem' : '0.8rem'
       }
     }
 

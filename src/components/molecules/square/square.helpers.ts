@@ -80,12 +80,11 @@ export const ICONS: Record<string, IconNode> = {
   'clipboard-list': ClipboardList,
 }
 
-// RunwayML: no decorative colors — monochrome only
 export const COLOR_MAP: Record<string, { icon: string; bg: string; title: string }> = {
-  violet: { icon: '#767d88', bg: 'rgba(255,255,255,0.06)', title: '#767d88' },
-  teal: { icon: '#767d88', bg: 'rgba(255,255,255,0.06)', title: '#767d88' },
-  blue: { icon: '#767d88', bg: 'rgba(255,255,255,0.06)', title: '#767d88' },
-  amber: { icon: '#767d88', bg: 'rgba(255,255,255,0.06)', title: '#767d88' },
-  rose: { icon: '#767d88', bg: 'rgba(255,255,255,0.06)', title: '#767d88' },
-  gray: { icon: '#767d88', bg: 'rgba(255,255,255,0.06)', title: '#767d88' },
+  violet: { icon: '#a78bfa', bg: 'rgba(139,92,246,0.07)', title: '#a78bfa' },
+  teal: { icon: '#5eead4', bg: 'rgba(20,184,166,0.07)', title: '#5eead4' },
+  blue: { icon: '#7daffc', bg: 'rgba(59,130,246,0.07)', title: '#7daffc' },
+  amber: { icon: '#fbbf54', bg: 'rgba(245,158,11,0.07)', title: '#fbbf54' },
+  rose: { icon: '#f87191', bg: 'rgba(244,63,94,0.07)', title: '#f87191' },
+  gray: { icon: '#9ca3af', bg: 'rgba(107,114,128,0.07)', title: '#9ca3af' },
 }

@@ -1,6 +1,6 @@
 import createElement from 'lucide/dist/esm/createElement.js'
 
-import { ICONS } from './square.helpers'
+import { COLOR_MAP, ICONS } from './square.helpers'
 
 const getShadow = (token: string): string =>
   getComputedStyle(document.documentElement).getPropertyValue(token).trim() || 'none'
@@ -10,10 +10,14 @@ class ContentSquare extends HTMLElement {
     const heading = this.getAttribute('heading') ?? ''
     const text = this.getAttribute('text') ?? ''
     const iconName = this.getAttribute('icon') ?? ''
+    const colorName = this.getAttribute('color') ?? ''
+    const colors = COLOR_MAP[colorName]
+    const iconColor = colors?.icon ?? 'var(--t-icon)'
+    const iconBg = colors?.bg ?? 'var(--t-icon-bg)'
 
     this.innerHTML = `
       <div class="rounded-lg flex flex-col justify-start p-[clamp(1.25rem,2.5dvw,2.5rem)] min-h-[clamp(160px,22dvh,260px)] opacity-0 -translate-y-8 transition-all duration-500 ease-out cursor-default bg-t-surface" data-card>
-        ${iconName ? `<div class="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-lg" style="background:var(--t-icon-bg);color:var(--t-icon)" data-icon-slot></div>` : ''}
+        ${iconName ? `<div class="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-lg" style="background:${iconBg};color:${iconColor}" data-icon-slot></div>` : ''}
         <h3 class="text-t-text-heading text-[clamp(1rem,1.8dvw,1.25rem)] font-normal leading-none tracking-normal mb-3">${heading}</h3>
         <p class="text-t-text-secondary leading-[1.4] tracking-[-0.16px] text-[clamp(0.8rem,1.3dvw,0.95rem)]">${text}</p>
       </div>
