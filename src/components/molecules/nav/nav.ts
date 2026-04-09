@@ -63,6 +63,11 @@ class SiteNav extends HTMLElement {
       localStorage.setItem('theme', newTheme)
       toggleBtn.innerHTML = newTheme === 'dark' ? SUN_ICON : MOON_ICON
     })
+
+    // Sync toggle icon when system theme changes (no stored preference)
+    window.addEventListener('system-theme-change', ((e: CustomEvent) => {
+      toggleBtn.innerHTML = e.detail.theme === 'dark' ? SUN_ICON : MOON_ICON
+    }) as EventListener)
   }
 
   private _isDark(): boolean {

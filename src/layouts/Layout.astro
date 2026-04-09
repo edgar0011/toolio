@@ -33,7 +33,22 @@ const versionComment = `<!-- app name: ${appName} -->\n<!-- app version: ${appVe
         var stored = localStorage.getItem('theme')
         if (stored === 'light' || stored === 'dark') {
           document.documentElement.setAttribute('data-theme', stored)
+        } else {
+          // No stored preference — follow system
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+          document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light')
         }
+
+        // Listen for system theme changes (only when user has no stored preference)
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+          if (!localStorage.getItem('theme')) {
+            var theme = e.matches ? 'dark' : 'light'
+            document.documentElement.setAttribute('data-theme', theme)
+            // Update toggle icon if nav is rendered
+            var evt = new CustomEvent('system-theme-change', { detail: { theme: theme } })
+            window.dispatchEvent(evt)
+          }
+        })
       })()
     </script>
     <title>{title}</title>
