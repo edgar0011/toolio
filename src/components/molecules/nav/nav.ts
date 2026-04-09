@@ -1,10 +1,11 @@
 import { observeThemePreference, setThemeClassNames, switchColorTheme } from '../../common.theme'
+
 import { NAV_LINKS } from './nav.helpers'
 
 const SUN_ICON = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`
 const MOON_ICON = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`
 
-// Configure theme class names (same as es-kit pattern)
+// Configure theme class names (es-kit pattern)
 setThemeClassNames({ dark: 'dark', light: 'light' })
 
 class SiteNav extends HTMLElement {
@@ -71,12 +72,10 @@ class SiteNav extends HTMLElement {
       toggleBtn.innerHTML = newIsDark ? SUN_ICON : MOON_ICON
     })
 
-    // Observe system preference changes (mirrors es-kit observeThemePreference)
-    // Only active when user has no stored preference
+    // Observe system preference changes (es-kit observeThemePreference)
     this._cleanupObserver = observeThemePreference(
       () => document.documentElement,
       (isDark) => {
-        // Only follow system if user hasn't manually chosen
         if (!localStorage.getItem('theme')) {
           toggleBtn.innerHTML = isDark ? SUN_ICON : MOON_ICON
         }

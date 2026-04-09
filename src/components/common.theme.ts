@@ -1,11 +1,12 @@
 /**
- * Theme management module — mirrors @e1011/es-kit useThemePreference pattern.
- * Uses CSS class names on the target element + matchMedia observers.
+ * Theme management — mirrors @e1011/es-kit/hooks theme API
+ * (setThemeClassNames, observeThemePreference, switchColorTheme)
+ * without the React dependency.
  */
 
 type ThemeMap = { dark: string; light: string }
 
-let themeClassNames: ThemeMap = { dark: 'dark', light: 'light' }
+let themeClassNames: ThemeMap = { dark: 'theme-dark', light: 'theme-light' }
 
 /** Configure the CSS class names used for dark/light theme. */
 export const setThemeClassNames = (themes: ThemeMap): void => {
@@ -17,12 +18,8 @@ export const getBaseThemes = (): ThemeMap => themeClassNames
 
 /**
  * Apply theme class to an element — removes the opposite class, adds the correct one.
- * Matches es-kit's switchColorTheme signature.
  */
-export const switchColorTheme = (
-  isDark: boolean,
-  htmlElement?: HTMLElement,
-): void => {
+export const switchColorTheme = (isDark: boolean, htmlElement?: HTMLElement): void => {
   const el = htmlElement ?? document.body
   const addClass = isDark ? themeClassNames.dark : themeClassNames.light
   const removeClass = isDark ? themeClassNames.light : themeClassNames.dark
@@ -33,27 +30,20 @@ export const switchColorTheme = (
 
 /**
  * Observe system theme preference via matchMedia and apply theme classes.
- * Matches es-kit's observeThemePreference signature.
- *
- * @returns Cleanup function to remove listeners.
+ * Returns cleanup function to remove listeners.
  */
 export const observeThemePreference = (
   getHtmlElement: () => HTMLElement = () => document.body,
-  switchCallback?: (isDark: boolean) => void,
+  switchCallback: (isDark: boolean) => void = () => {},
 ): (() => void) => {
   const apply = (isDark: boolean): void => {
     const el = getHtmlElement()
     switchColorTheme(isDark, el)
-    switchCallback?.(isDark)
+    switchCallback(isDark)
   }
 
-  const onDarkChange = (e: MediaQueryListEvent): void => {
-    apply(e.matches)
-  }
-
-  const onLightChange = (e: MediaQueryListEvent): void => {
-    apply(!e.matches)
-  }
+  const onDarkChange = (e: MediaQueryListEvent): void => apply(e.matches)
+  const onLightChange = (e: MediaQueryListEvent): void => apply(!e.matches)
 
   const darkMq = window.matchMedia('(prefers-color-scheme: dark)')
   const lightMq = window.matchMedia('(prefers-color-scheme: light)')
