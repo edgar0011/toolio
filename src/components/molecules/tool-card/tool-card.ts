@@ -13,7 +13,7 @@ class ToolCard extends HTMLElement {
     const category = this.getAttribute('category') ?? ''
 
     this.innerHTML = `
-      <div class="rounded-lg flex flex-col justify-start p-[clamp(1rem,2dvw,1.5rem)] bg-t-surface border border-t-border opacity-0 -translate-y-8 transition-all duration-500 ease-out cursor-default" data-card>
+      <div class="rounded-lg flex flex-col justify-start p-[clamp(1rem,2dvw,1.5rem)] bg-t-surface opacity-0 -translate-y-8 transition-all duration-500 ease-out cursor-default" data-card>
         <div class="flex items-start gap-3 mb-2">
           ${iconName ? `<div class="shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-lg" style="background:var(--t-icon-bg);color:var(--t-icon)" data-icon-slot></div>` : ''}
           <div class="min-w-0">
@@ -39,17 +39,13 @@ class ToolCard extends HTMLElement {
 
     const card = this.querySelector('[data-card]') as HTMLElement
 
-    requestAnimationFrame(() => {
-      card.style.boxShadow = getThemeShadow('--t-shadow-rest')
-    })
-
     card.addEventListener('mouseenter', () => {
       card.style.transform = 'translateY(-8px)'
       card.style.boxShadow = getThemeShadow('--t-shadow-hover')
     })
     card.addEventListener('mouseleave', () => {
       card.style.transform = 'translateY(0)'
-      card.style.boxShadow = getThemeShadow('--t-shadow-rest')
+      card.style.boxShadow = 'none'
     })
   }
 }

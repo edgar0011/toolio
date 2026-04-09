@@ -17,16 +17,13 @@ class ContentSquare extends HTMLElement {
     const isPrimary = sectionIndex % 2 === 0
     const headingColor = isPrimary ? 'text-t-text-heading' : 'text-t-text-heading-alt'
     const textColor = 'text-t-text-secondary'
-
-    const cardClasses = isPrimary
-      ? 'bg-t-surface border border-t-border'
-      : 'bg-t-surface-alt border border-t-border'
+    const cardBg = isPrimary ? 'bg-t-surface' : 'bg-t-surface-alt'
 
     const iconColorVar = isPrimary ? 'var(--t-icon)' : 'var(--t-icon-alt)'
     const iconBgVar = isPrimary ? 'var(--t-icon-bg)' : 'var(--t-icon-bg-alt)'
 
     this.innerHTML = `
-      <div class="rounded-lg flex flex-col justify-start p-[clamp(1.25rem,2.5dvw,2.5rem)] min-h-[clamp(160px,22dvh,260px)] opacity-0 -translate-y-8 transition-all duration-500 ease-out cursor-default ${cardClasses}" data-card>
+      <div class="rounded-lg flex flex-col justify-start p-[clamp(1.25rem,2.5dvw,2.5rem)] min-h-[clamp(160px,22dvh,260px)] opacity-0 -translate-y-8 transition-all duration-500 ease-out cursor-default ${cardBg}" data-card>
         ${iconName ? `<div class="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-lg" style="background:${iconBgVar};color:${iconColorVar}" data-icon-slot></div>` : ''}
         <h3 class="${headingColor} text-[clamp(1rem,1.8dvw,1.25rem)] font-normal leading-[1.0] tracking-normal mb-3">${heading}</h3>
         <p class="${textColor} leading-[1.4] tracking-[-0.16px] text-[clamp(0.8rem,1.3dvw,0.95rem)]">${text}</p>
@@ -47,18 +44,13 @@ class ContentSquare extends HTMLElement {
 
     const card = this.querySelector('[data-card]') as HTMLElement
 
-    // Apply rest shadow (read fresh — theme may change)
-    requestAnimationFrame(() => {
-      card.style.boxShadow = getThemeShadow('--t-shadow-rest')
-    })
-
     card.addEventListener('mouseenter', () => {
       card.style.transform = 'translateY(-8px)'
       card.style.boxShadow = getThemeShadow('--t-shadow-hover')
     })
     card.addEventListener('mouseleave', () => {
       card.style.transform = 'translateY(0)'
-      card.style.boxShadow = getThemeShadow('--t-shadow-rest')
+      card.style.boxShadow = 'none'
     })
   }
 }
