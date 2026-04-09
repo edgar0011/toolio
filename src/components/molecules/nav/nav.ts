@@ -1,4 +1,9 @@
-import { observeThemePreference, setThemeClassNames, switchColorTheme } from '../../common.theme'
+// Deep import to avoid pulling in React via the es-kit/utils barrel
+import {
+  observeThemePreference,
+  setThemeClassNames,
+  switchColorTheme,
+} from '@e1011/es-kit/dist/utils/esm/src/core/utils/helpers/ui.js'
 
 import { NAV_LINKS } from './nav.helpers'
 
