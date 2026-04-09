@@ -24,12 +24,21 @@ const versionComment = `<!-- app name: ${appName} -->\n<!-- app version: ${appVe
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" /></noscript>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600&display=swap" /></noscript>
+    <script is:inline>
+      // Apply theme class before first paint to prevent flash
+      (function() {
+        var el = document.documentElement
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+        el.classList.remove('dark', 'light')
+        el.classList.add(prefersDark ? 'dark' : 'light')
+      })()
+    </script>
     <title>{title}</title>
   </head>
-  <body class={`min-h-screen flex flex-col bg-toolio-white text-toolio-dark font-sans antialiased ${bodyClass ?? ""}`}>
+  <body class={`min-h-screen flex flex-col bg-t-bg text-t-text font-sans antialiased ${bodyClass ?? ""}`}>
     <site-nav current={currentPath}></site-nav>
     <main class="flex-1">
       <slot />

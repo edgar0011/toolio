@@ -116,11 +116,12 @@ export const ICONS: Record<string, IconNode> = {
   grid: Grid,
 }
 
+// RunwayML: no decorative colors — monochrome only
 export const COLOR_MAP: Record<string, { icon: string; bg: string; title: string }> = {
-  violet: { icon: '#7c3aed', bg: '#ede9fe', title: '#7c3aed' },
-  teal: { icon: '#0d9488', bg: '#e0f5f1', title: '#0d9488' },
-  blue: { icon: '#2563eb', bg: '#e0ecfc', title: '#2563eb' },
-  amber: { icon: '#d97706', bg: '#fef3c7', title: '#d97706' },
-  rose: { icon: '#e11d48', bg: '#fce4ec', title: '#e11d48' },
-  gray: { icon: '#6b7280', bg: '#f3f4f6', title: '#6b7280' },
+  violet: { icon: '#767d88', bg: 'rgba(255,255,255,0.06)', title: '#767d88' },
+  teal: { icon: '#767d88', bg: 'rgba(255,255,255,0.06)', title: '#767d88' },
+  blue: { icon: '#767d88', bg: 'rgba(255,255,255,0.06)', title: '#767d88' },
+  amber: { icon: '#767d88', bg: 'rgba(255,255,255,0.06)', title: '#767d88' },
+  rose: { icon: '#767d88', bg: 'rgba(255,255,255,0.06)', title: '#767d88' },
+  gray: { icon: '#767d88', bg: 'rgba(255,255,255,0.06)', title: '#767d88' },
 }

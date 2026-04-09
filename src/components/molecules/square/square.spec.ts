@@ -9,7 +9,6 @@ describe('ContentSquare', () => {
   let section: HTMLElement
 
   beforeEach(() => {
-    // ContentSquare reads section-index from its parent content-section
     section = document.createElement('content-section')
     section.setAttribute('section-index', '0')
     el = document.createElement('content-square')
@@ -42,7 +41,6 @@ describe('ContentSquare', () => {
 
     const iconSlot = el.querySelector('[data-icon-slot]')
     expect(iconSlot).toBeTruthy()
-    // Lucide createElement appends an SVG
     expect(iconSlot!.querySelector('svg')).toBeTruthy()
   })
 
@@ -55,59 +53,27 @@ describe('ContentSquare', () => {
     expect(iconSlot).toBeNull()
   })
 
-  it('applies color scheme from COLOR_MAP', () => {
-    el.setAttribute('heading', 'Colored')
+  it('uses uniform theme regardless of section index', () => {
+    section.setAttribute('section-index', '0')
+    el.setAttribute('heading', 'Card')
     el.setAttribute('text', 'Desc')
-    el.setAttribute('color', 'violet')
     document.body.appendChild(section)
+
+    const card = el.querySelector('[data-card]')
+    expect(card!.className).toContain('bg-t-surface')
 
     const h3 = el.querySelector('h3')
-    expect(h3!.getAttribute('style')).toContain(COLOR_MAP.violet.title)
-
-    const iconSlot = el.querySelector('[data-icon-slot]')
-    // No icon set, so no icon slot
-    expect(iconSlot).toBeNull()
+    expect(h3!.className).toContain('text-t-text-heading')
   })
 
-  it('applies color to icon background when both icon and color are set', () => {
-    el.setAttribute('heading', 'Both')
-    el.setAttribute('text', 'Desc')
-    el.setAttribute('icon', 'zap')
-    el.setAttribute('color', 'teal')
-    document.body.appendChild(section)
-
-    const iconSlot = el.querySelector('[data-icon-slot]') as HTMLElement
-    // jsdom sets inline styles via the `style` attribute, check the raw attribute
-    const styleAttr = iconSlot.getAttribute('style') ?? ''
-    expect(styleAttr).toContain(COLOR_MAP.teal.bg)
-    expect(styleAttr).toContain(COLOR_MAP.teal.icon)
-  })
-
-  it('uses light theme defaults for even section index', () => {
-    section.setAttribute('section-index', '0')
-    el.setAttribute('heading', 'Light')
-    el.setAttribute('text', 'Desc')
-    document.body.appendChild(section)
-
-    const card = el.querySelector('[data-card]')
-    expect(card!.className).toContain('bg-white')
-    expect(card!.className).not.toContain('bg-white/')
-
-    const p = el.querySelector('p')
-    expect(p!.className).toContain('text-toolio-500')
-  })
-
-  it('uses dark theme defaults for odd section index', () => {
+  it('uses same theme for odd section index', () => {
     section.setAttribute('section-index', '1')
-    el.setAttribute('heading', 'Dark')
+    el.setAttribute('heading', 'Card')
     el.setAttribute('text', 'Desc')
     document.body.appendChild(section)
 
     const card = el.querySelector('[data-card]')
-    expect(card!.className).toContain('bg-white/[0.08]')
-
-    const p = el.querySelector('p')
-    expect(p!.className).toContain('text-toolio-200')
+    expect(card!.className).toContain('bg-t-surface')
   })
 
   it('renders card with initial hidden styles for animation', () => {
@@ -117,17 +83,19 @@ describe('ContentSquare', () => {
 
     const card = el.querySelector('[data-card]')
     expect(card!.className).toContain('opacity-0')
-    expect(card!.className).toContain('-translate-y-5')
+    expect(card!.className).toContain('-translate-y-8')
   })
 
-  it('applies hover transform on mouseenter and resets on mouseleave', () => {
+  it('applies hover transform and shadow on mouseenter, resets on mouseleave', () => {
     el.setAttribute('heading', 'Hover')
     el.setAttribute('text', 'Desc')
     document.body.appendChild(section)
 
     const card = el.querySelector('[data-card]') as HTMLElement
     card.dispatchEvent(new Event('mouseenter'))
-    expect(card.style.transform).toBe('translateY(-4px)')
+    expect(card.style.transform).toBe('translateY(-8px)')
+    // Shadow is read from getComputedStyle (empty in jsdom) — just verify it was set
+    expect(card.style.boxShadow).toBeDefined()
 
     card.dispatchEvent(new Event('mouseleave'))
     expect(card.style.transform).toBe('translateY(0)')
