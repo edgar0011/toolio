@@ -48,7 +48,7 @@
 
 /* ── Dark theme (default) ── */
 :root,
-[data-theme="dark"] {
+.dark {
   color-scheme: dark;
 
   /* Page & sections */
@@ -79,7 +79,7 @@
 }
 
 /* ── Light theme ── */
-[data-theme="light"] {
+.light {
   color-scheme: light;
 
   /* Page & sections */
@@ -107,32 +107,4 @@
   /* Icons — alt sections */
   --t-icon-alt: #404040;
   --t-icon-bg-alt: rgba(0, 0, 0, 0.05);
-}
-
-/* System preference fallback when no data-theme is set */
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme]) {
-    color-scheme: light;
-
-    --t-bg: #ffffff;
-    --t-bg-alt: #e9ecf2;
-    --t-surface: #fefefe;
-    --t-surface-alt: #ffffff;
-    --t-border: #e9ecf2;
-    --t-border-nav: rgba(233, 236, 242, 0.7);
-
-    --t-text: #000000;
-    --t-text-heading: #000000;
-    --t-text-heading-alt: #404040;
-    --t-text-secondary: #767d88;
-    --t-text-muted: #7d848e;
-    --t-text-footer: #767d88;
-
-    --t-nav-bg: rgba(255, 255, 255, 0.8);
-
-    --t-icon: #404040;
-    --t-icon-bg: rgba(0, 0, 0, 0.05);
-    --t-icon-alt: #404040;
-    --t-icon-bg-alt: rgba(0, 0, 0, 0.05);
-  }
 }
