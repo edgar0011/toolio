@@ -35,7 +35,9 @@ site-nav {
 
 site-footer {
   display: block;
+  flex-shrink: 0;
 }
+
 
 photo-banner,
 hero-image,
