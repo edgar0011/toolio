@@ -93,12 +93,12 @@ describe('ContentSquare', () => {
 
     const card = el.querySelector('[data-card]') as HTMLElement
     card.dispatchEvent(new Event('mouseenter'))
-    expect(card.style.transform).toBe('translateY(-8px)')
+    expect(card.style.translate).toBe('0 -8px')
     // Shadow is read from getComputedStyle (empty in jsdom) — just verify it was set
     expect(card.style.boxShadow).toBeDefined()
 
     card.dispatchEvent(new Event('mouseleave'))
-    expect(card.style.transform).toBe('translateY(0)')
+    expect(card.style.translate).toBe('0 0')
   })
 })
 

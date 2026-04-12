@@ -1,3 +1,6 @@
+import { ced } from '@e1011/es-kit/utils'
+
+@ced('content-section')
 class ContentSection extends HTMLElement {
   connectedCallback() {
     const title = this.getAttribute('section-title') ?? ''
@@ -11,8 +14,10 @@ class ContentSection extends HTMLElement {
             <h2 class="text-t-text-heading text-[clamp(2rem,4dvw,3rem)] font-normal leading-[1.0] tracking-[-1px] mb-[1.5dvh]">${title}</h2>
             <p class="text-t-text-secondary max-w-2xl mx-auto text-[clamp(0.95rem,1.8dvw,1.25rem)] leading-[1.4] tracking-[-0.16px]">${subtitle}</p>
           </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[clamp(1rem,2dvw,2rem)]">
-            ${children}
+          <div class="rounded-xl border border-white/10 backdrop-blur-md p-[clamp(1rem,2dvw,2rem)]">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[clamp(1rem,2dvw,2rem)]">
+              ${children}
+            </div>
           </div>
         </div>
       </section>
@@ -27,7 +32,7 @@ class ContentSection extends HTMLElement {
         for (const entry of entries) {
           if (entry.isIntersecting) {
             header.style.opacity = '1'
-            header.style.transform = 'translateY(0)'
+            header.style.translate = '0 0'
 
             cards.forEach((card, i) => {
               setTimeout(
@@ -35,7 +40,7 @@ class ContentSection extends HTMLElement {
                   const inner = card.querySelector('div') as HTMLElement
                   if (inner) {
                     inner.style.opacity = '1'
-                    inner.style.transform = 'translateY(0)'
+                    inner.style.translate = '0 0'
                   }
                 },
                 150 + i * 100,
@@ -53,4 +58,4 @@ class ContentSection extends HTMLElement {
   }
 }
 
-customElements.define('content-section', ContentSection)
+export default ContentSection

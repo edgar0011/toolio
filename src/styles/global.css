@@ -25,7 +25,6 @@ content-section {
 
 content-square {
   display: block;
-  min-height: clamp(160px, 22dvh, 260px);
 }
 
 site-nav {

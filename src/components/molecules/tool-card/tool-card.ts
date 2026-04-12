@@ -1,3 +1,4 @@
+import { ced } from '@e1011/es-kit/utils'
 import createElement from 'lucide/dist/esm/createElement.js'
 
 import { COLOR_MAP, ICONS } from './tool-card.helpers.js'
@@ -5,6 +6,7 @@ import { COLOR_MAP, ICONS } from './tool-card.helpers.js'
 const getShadow = (token: string): string =>
   getComputedStyle(document.documentElement).getPropertyValue(token).trim() || 'none'
 
+@ced('tool-card')
 class ToolCard extends HTMLElement {
   connectedCallback() {
     const heading = this.getAttribute('heading') ?? ''
@@ -44,14 +46,14 @@ class ToolCard extends HTMLElement {
     const card = this.querySelector('[data-card]') as HTMLElement
 
     card.addEventListener('mouseenter', () => {
-      card.style.transform = 'translateY(-8px)'
+      card.style.translate = '0 -8px'
       card.style.boxShadow = getShadow('--t-shadow-hover')
     })
     card.addEventListener('mouseleave', () => {
-      card.style.transform = 'translateY(0)'
+      card.style.translate = '0 0'
       card.style.boxShadow = 'none'
     })
   }
 }
 
-customElements.define('tool-card', ToolCard)
+export default ToolCard

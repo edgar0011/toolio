@@ -1,3 +1,6 @@
+import { ced } from '@e1011/es-kit/utils'
+
+@ced('tools-masonry')
 class ToolsMasonry extends HTMLElement {
   private _resizeObserver: ResizeObserver | null = null
   private _allCards: HTMLElement[] = []
@@ -48,7 +51,7 @@ class ToolsMasonry extends HTMLElement {
     const header = this.querySelector('[data-section-header]') as HTMLElement
     requestAnimationFrame(() => {
       header.style.opacity = '1'
-      header.style.transform = 'translateY(0)'
+      header.style.translate = '0 0'
     })
 
     this._allCards = Array.from(this.querySelectorAll<HTMLElement>('tool-card'))
@@ -262,7 +265,7 @@ class ToolsMasonry extends HTMLElement {
             const inner = entry.target.querySelector('[data-card]') as HTMLElement
             if (inner) {
               inner.style.opacity = '1'
-              inner.style.transform = 'translateY(0)'
+              inner.style.translate = '0 0'
             }
             observer.unobserve(entry.target)
           }
@@ -280,4 +283,4 @@ class ToolsMasonry extends HTMLElement {
   }
 }
 
-customElements.define('tools-masonry', ToolsMasonry)
+export default ToolsMasonry

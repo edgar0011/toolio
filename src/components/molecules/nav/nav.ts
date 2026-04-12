@@ -1,14 +1,12 @@
-// Deep import to avoid pulling in React via the es-kit/utils barrel
-import {
-  observeThemePreference,
-  setThemeClassNames,
-} from '@e1011/es-kit/dist/utils/esm/src/core/utils/helpers/ui.js'
+import { ced } from '@e1011/es-kit/utils'
+import { observeThemePreference, setThemeClassNames } from '@e1011/es-kit/utils/ui'
 
 import { NAV_LINKS } from './nav.helpers'
 
 // Configure theme class names on documentElement (must match the element passed to observeThemePreference)
 setThemeClassNames({ dark: 'dark', light: 'light' }, document.documentElement)
 
+@ced('site-nav')
 class SiteNav extends HTMLElement {
   private _cleanupObserver: (() => void) | null = null
 
@@ -21,7 +19,7 @@ class SiteNav extends HTMLElement {
     this.style.display = 'block'
 
     this.innerHTML = `
-      <nav class="text-t-text px-6 flex items-center justify-between bg-[var(--t-nav-bg)] backdrop-blur-md border-b border-[var(--t-border-nav)] py-[0.2rem] transition-[padding,background-color] duration-300 ease-out shadow-[var(--t-shadow-nav)]" data-nav>
+      <nav class="text-t-text px-6 flex items-center justify-between py-[0.2rem] transition-[padding] duration-300 ease-out border-b border-[var(--t-border-nav)] shadow-[var(--t-shadow-nav)] backdrop-blur-sm" data-nav>
         <a href="/" class="font-medium tracking-[-0.5px] text-[2.5rem] transition-[font-size] duration-300 ease-out text-t-text" data-logo>Toolio</a>
         <div class="flex items-center gap-6">
           <ul class="flex gap-6 list-none m-0 p-0">
@@ -68,4 +66,4 @@ class SiteNav extends HTMLElement {
   }
 }
 
-customElements.define('site-nav', SiteNav)
+export default SiteNav

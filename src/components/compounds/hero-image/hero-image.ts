@@ -1,3 +1,6 @@
+import { ced } from '@e1011/es-kit/utils'
+
+@ced('hero-image')
 class HeroImage extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
@@ -193,4 +196,4 @@ class HeroImage extends HTMLElement {
   }
 }
 
-customElements.define('hero-image', HeroImage)
+export default HeroImage

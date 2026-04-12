@@ -1,3 +1,6 @@
+import { ced } from '@e1011/es-kit/utils'
+
+@ced('site-footer')
 class SiteFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
@@ -11,4 +14,4 @@ class SiteFooter extends HTMLElement {
   }
 }
 
-customElements.define('site-footer', SiteFooter)
+export default SiteFooter

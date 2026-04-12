@@ -1,3 +1,6 @@
+import { ced } from '@e1011/es-kit/utils'
+
+@ced('photo-banner')
 class PhotoBanner extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
@@ -66,4 +69,4 @@ class PhotoBanner extends HTMLElement {
   }
 }
 
-customElements.define('photo-banner', PhotoBanner)
+export default PhotoBanner
