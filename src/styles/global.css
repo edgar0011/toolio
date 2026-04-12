@@ -40,7 +40,8 @@ site-footer {
 
 photo-banner,
 hero-image,
-tools-masonry {
+tools-masonry,
+floating-lines {
   display: block;
 }
 
@@ -76,6 +77,11 @@ tools-masonry {
 
   --font-sans: "Inter", "Inter Fallback", system-ui, sans-serif;
   --font-heading: "Inter", "Inter Fallback", system-ui, sans-serif;
+}
+
+/* ── Floating-lines: light theme only ── */
+.dark floating-lines {
+  display: none;
 }
 
 /* ── Dark theme (default) ── */

@@ -602,6 +602,11 @@ function initHyperspeed() {
     return
   }
 
+  // Only run hyperspeed in dark theme
+  if (document.documentElement.classList.contains('light')) {
+    return
+  }
+
   // Remove the gradient, let canvas show through
   section.style.background = 'transparent'
 

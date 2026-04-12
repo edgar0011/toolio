@@ -6,19 +6,23 @@ const section = aboutData.about;
 ---
 
 <Layout title="About — Toolio" currentPath="/about">
-  <content-section
-    section-title={section.title}
-    section-subtitle={section.subtitle}
-    section-index="1"
-    data-hyperspeed
-  >
-    {
-      section.squares.map((sq, i) => (
-        <content-square heading={sq.heading} text={sq.text} icon={sq.icon} data-index={String(i)} />
-      ))
-    }
-  </content-section>
+  <div class="relative">
+    <floating-lines gradient="898ca9,2F4BC0,47a1f5" bg-color="b1c0e2"></floating-lines>
+    <content-section
+      section-title={section.title}
+      section-subtitle={section.subtitle}
+      section-index="1"
+      data-hyperspeed
+    >
+      {
+        section.squares.map((sq, i) => (
+          <content-square heading={sq.heading} text={sq.text} icon={sq.icon} data-index={String(i)} />
+        ))
+      }
+    </content-section>
+  </div>
   <script src="../components/molecules/section/section.ts"></script>
   <script src="../components/molecules/square/square.ts"></script>
   <script src="../components/compounds/hyperspeed/hyperspeed.ts"></script>
+  <script src="../components/compounds/floating-lines/floating-lines.ts"></script>
 </Layout>
