@@ -319,7 +319,7 @@ class HyperspeedApp {
 
   constructor(container: HTMLElement, options: any) {
     this.options = options
-    if (this.options.distortion == null) {
+    if (this.options.distortion === null || this.options.distortion === undefined) {
       this.options.distortion = {
         uniforms: distortion_uniforms,
         getDistortion: distortion_vertex,

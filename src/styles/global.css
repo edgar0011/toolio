@@ -63,17 +63,29 @@ floating-lines {
 
   /* ── Semantic theme tokens (resolve to CSS vars) ── */
   --color-t-bg: var(--t-bg);
+  --color-t-bg-alt: var(--t-bg-alt);
   --color-t-surface: var(--t-surface);
+  --color-t-surface-alt: var(--t-surface-alt);
   --color-t-border: var(--t-border);
   --color-t-border-nav: var(--t-border-nav);
   --color-t-text: var(--t-text);
   --color-t-text-heading: var(--t-text-heading);
+  --color-t-text-heading-alt: var(--t-text-heading-alt);
   --color-t-text-secondary: var(--t-text-secondary);
   --color-t-text-muted: var(--t-text-muted);
   --color-t-text-footer: var(--t-text-footer);
   --color-t-nav-bg: var(--t-nav-bg);
+  --color-t-accent: var(--t-accent);
+  --color-t-accent-hover: var(--t-accent-hover);
   --color-t-icon: var(--t-icon);
   --color-t-icon-bg: var(--t-icon-bg);
+  --color-t-icon-alt: var(--t-icon-alt);
+  --color-t-icon-bg-alt: var(--t-icon-bg-alt);
+
+  /* ── Shadows ── */
+  --shadow-soft: var(--t-shadow-soft);
+  --shadow-card: var(--t-shadow-card);
+  --shadow-elevated: var(--t-shadow-elevated);
 
   --font-sans: "Inter", "Inter Fallback", system-ui, sans-serif;
   --font-heading: "Inter", "Inter Fallback", system-ui, sans-serif;
@@ -90,21 +102,31 @@ floating-lines {
   color-scheme: dark;
 
   --t-bg: #1e1e22;
+  --t-bg-alt: #18181b;
   --t-surface: #27272a;
+  --t-surface-alt: #303035;
   --t-border: #3f3f46;
   --t-border-nav: rgba(63, 63, 70, 0.5);
 
   --t-text: #fafafa;
   --t-text-heading: #fafafa;
+  --t-text-heading-alt: #a1a1aa;
   --t-text-secondary: #a1a1aa;
   --t-text-muted: #a1a1aa;
   --t-text-footer: #a1a1aa;
 
   --t-nav-bg: rgba(24, 24, 27, 0.85);
 
+  --t-accent: #fafafa;
+  --t-accent-hover: #d4d4d8;
   --t-icon: #767d88;
   --t-icon-bg: rgba(255, 255, 255, 0.06);
+  --t-icon-alt: #a1a1aa;
+  --t-icon-bg-alt: rgba(255, 255, 255, 0.04);
 
+  --t-shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.20), 0 4px 12px rgba(0, 0, 0, 0.16);
+  --t-shadow-card: 0 2px 8px rgba(0, 0, 0, 0.24), 0 8px 24px rgba(0, 0, 0, 0.20);
+  --t-shadow-elevated: 0 4px 16px rgba(0, 0, 0, 0.30), 0 16px 48px rgba(0, 0, 0, 0.24);
   --t-shadow-hover: 0 16px 48px rgba(0, 0, 0, 0.5), 0 6px 16px rgba(0, 0, 0, 0.3);
   --t-shadow-nav: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
@@ -114,21 +136,31 @@ floating-lines {
   color-scheme: light;
 
   --t-bg: #f8f8fa;
+  --t-bg-alt: #f0f0f3;
   --t-surface: #f0f0f3;
+  --t-surface-alt: #e8e8eb;
   --t-border: #e5e5e7;
   --t-border-nav: rgba(0, 0, 0, 0.08);
 
   --t-text: #1d1d1f;
   --t-text-heading: #1d1d1f;
+  --t-text-heading-alt: #86868b;
   --t-text-secondary: #86868b;
   --t-text-muted: #86868b;
   --t-text-footer: #86868b;
 
   --t-nav-bg: rgba(255, 255, 255, 0.72);
 
+  --t-accent: #1d1d1f;
+  --t-accent-hover: #3a3a3c;
   --t-icon: #86868b;
   --t-icon-bg: rgba(0, 0, 0, 0.04);
+  --t-icon-alt: #636366;
+  --t-icon-bg-alt: rgba(0, 0, 0, 0.03);
 
+  --t-shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.04);
+  --t-shadow-card: 0 2px 8px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.06);
+  --t-shadow-elevated: 0 4px 16px rgba(0, 0, 0, 0.10), 0 16px 48px rgba(0, 0, 0, 0.08);
   --t-shadow-hover: 0 20px 50px rgba(0, 0, 0, 0.18), 0 8px 20px rgba(0, 0, 0, 0.1);
   --t-shadow-nav: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
