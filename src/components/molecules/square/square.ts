@@ -1,5 +1,5 @@
 import { ced } from '@e1011/es-kit/utils'
-import createElement from 'lucide/dist/esm/createElement.js'
+import { createElement } from 'lucide'
 
 import { COLOR_MAP, ICONS } from './square.helpers'
 

@@ -1,43 +1,45 @@
-import Banknote from 'lucide/dist/esm/icons/banknote.js'
-import Bell from 'lucide/dist/esm/icons/bell.js'
-import BookOpen from 'lucide/dist/esm/icons/book-open.js'
-import Bot from 'lucide/dist/esm/icons/bot.js'
-import Building from 'lucide/dist/esm/icons/building.js'
-import Calendar from 'lucide/dist/esm/icons/calendar.js'
-import ChartBar from 'lucide/dist/esm/icons/chart-bar.js'
-import ChartLine from 'lucide/dist/esm/icons/chart-line.js'
-import ClipboardList from 'lucide/dist/esm/icons/clipboard-list.js'
-import Clock from 'lucide/dist/esm/icons/clock.js'
-import Code from 'lucide/dist/esm/icons/code.js'
-import Crown from 'lucide/dist/esm/icons/crown.js'
-import FileText from 'lucide/dist/esm/icons/file-text.js'
-import GitFork from 'lucide/dist/esm/icons/git-fork.js'
-import Globe from 'lucide/dist/esm/icons/globe.js'
-import Heart from 'lucide/dist/esm/icons/heart.js'
-import LayoutDashboard from 'lucide/dist/esm/icons/layout-dashboard.js'
-import Link from 'lucide/dist/esm/icons/link.js'
-import Mail from 'lucide/dist/esm/icons/mail.js'
-import MessageCircle from 'lucide/dist/esm/icons/message-circle.js'
-import MessageSquare from 'lucide/dist/esm/icons/message-square.js'
-import Package from 'lucide/dist/esm/icons/package.js'
-import PenTool from 'lucide/dist/esm/icons/pen-tool.js'
-import Play from 'lucide/dist/esm/icons/play.js'
-import Plug from 'lucide/dist/esm/icons/plug.js'
-import Quote from 'lucide/dist/esm/icons/quote.js'
-import RefreshCw from 'lucide/dist/esm/icons/refresh-cw.js'
-import Repeat from 'lucide/dist/esm/icons/repeat.js'
-import Rocket from 'lucide/dist/esm/icons/rocket.js'
-import Settings from 'lucide/dist/esm/icons/settings.js'
-import Shield from 'lucide/dist/esm/icons/shield.js'
-import Sparkles from 'lucide/dist/esm/icons/sparkles.js'
-import Target from 'lucide/dist/esm/icons/target.js'
-import Terminal from 'lucide/dist/esm/icons/terminal.js'
-import TrendingUp from 'lucide/dist/esm/icons/trending-up.js'
-import Users from 'lucide/dist/esm/icons/users.js'
-import Video from 'lucide/dist/esm/icons/video.js'
-import Zap from 'lucide/dist/esm/icons/zap.js'
+import type { IconNode } from 'lucide'
+import {
+  Banknote,
+  Bell,
+  BookOpen,
+  Bot,
+  Building,
+  Calendar,
+  ChartBar,
+  ChartLine,
+  ClipboardList,
+  Clock,
+  Code,
+  Crown,
+  FileText,
+  GitFork,
+  Globe,
+  Heart,
+  LayoutDashboard,
+  Link,
+  Mail,
+  MessageCircle,
+  MessageSquare,
+  Package,
+  PenTool,
+  Play,
+  Plug,
+  Quote,
+  RefreshCw,
+  Repeat,
+  Rocket,
+  Settings,
+  Shield,
+  Sparkles,
+  Target,
+  Terminal,
+  TrendingUp,
+  Users,
+  Video,
+  Zap,
+} from 'lucide'
 
-export type IconNode = [string, Record<string, string | number>, unknown[]?][]
 
 export const ICONS: Record<string, IconNode> = {
   rocket: Rocket,
